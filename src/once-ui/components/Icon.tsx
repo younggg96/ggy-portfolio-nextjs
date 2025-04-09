@@ -1,6 +1,6 @@
 "use client";
 
-import React, { forwardRef, useState, useEffect, ReactNode } from "react";
+import React, { forwardRef, useState, useEffect, ReactNode, memo } from "react";
 import classNames from "classnames";
 import { IconType } from "react-icons";
 import { iconLibrary } from "../icons";
@@ -19,7 +19,7 @@ interface IconProps extends React.ComponentProps<typeof Flex> {
   tooltipPosition?: "top" | "bottom" | "left" | "right";
 }
 
-const Icon = forwardRef<HTMLDivElement, IconProps>(
+const Icon = memo(forwardRef<HTMLDivElement, IconProps>(
   (
     {
       name,
@@ -72,6 +72,9 @@ const Icon = forwardRef<HTMLDivElement, IconProps>(
       return () => clearTimeout(timer);
     }, [isHover]);
 
+    const handleMouseEnter = () => setIsHover(true);
+    const handleMouseLeave = () => setIsHover(false);
+
     return (
       <Flex
         inline
@@ -83,8 +86,8 @@ const Icon = forwardRef<HTMLDivElement, IconProps>(
         role={decorative ? "presentation" : undefined}
         aria-hidden={decorative ? "true" : undefined}
         aria-label={decorative ? undefined : name}
-        onMouseEnter={() => setIsHover(true)}
-        onMouseLeave={() => setIsHover(false)}
+        onMouseEnter={handleMouseEnter}
+        onMouseLeave={handleMouseLeave}
         {...rest}
       >
         <IconComponent />
@@ -96,7 +99,7 @@ const Icon = forwardRef<HTMLDivElement, IconProps>(
       </Flex>
     );
   },
-);
+));
 
 Icon.displayName = "Icon";
 

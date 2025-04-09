@@ -41,7 +41,7 @@ const social = [
   },
   {
     name: "Instagram",
-    icon: "Instagram",
+    icon: "instagram",
     link: "https://www.instagram.com/young_gggy",
   },
 ];
@@ -50,7 +50,7 @@ const home = {
   label: "Home",
   title: `${person.name}'s Portfolio`,
   description: `Portfolio website showcasing my work as a ${person.role}`,
-  headline: <>Senior Software Engineer and System Architect</>,
+  headline: <>Senior Software Engineer and Frontend System Architect</>,
   subline: (
     <>
       I'm Guanggeng, a Senior Software Engineer at <InlineCode>Vibrant Wellness</InlineCode>, where I craft scalable

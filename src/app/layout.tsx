@@ -15,8 +15,6 @@ import { person, home } from "@/app/resources/content";
 import { Background, Column, Flex, ToastProvider } from "@/once-ui/components";
 
 export async function generateMetadata() {
-  console.log('%csrc/app/layout.tsx:18 object', 'color: #007acc;', `${baseURL}${person.avatar}`);
-
   return {
     metadataBase: new URL(`https://${baseURL}`),
     title: home.title,
@@ -53,10 +51,6 @@ export async function generateMetadata() {
         "max-image-preview": "large",
         "max-snippet": -1,
       },
-    },
-    icons: {
-      icon: person.avatar,
-      apple: person.avatar,
     },
   };
 }
