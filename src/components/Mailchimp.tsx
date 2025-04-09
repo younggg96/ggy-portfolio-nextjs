@@ -131,13 +131,13 @@ export const Mailchimp = ({ newsletter }: MailchimpProps) => {
       >
         {newsletter.description}
       </Text>
-      <Flex fillWidth maxWidth={24} gap="8">
-        <Button onClick={handleEmailClick} size="m" prefixIcon="email">
+      <Flex fillWidth maxWidth={24} gap="16" mobileDirection="column">
+        <Button onClick={handleEmailClick} size="m" prefixIcon="email" fillWidth>
           Send Message
         </Button>
         <Button
           onClick={handleResumeClick}
-          className="flex-1"
+          fillWidth
           size="m"
           prefixIcon="IoDownloadOutline"
         >
