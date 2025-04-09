@@ -12,6 +12,7 @@ export async function generateMetadata() {
   const title = home.title;
   const description = home.description;
   const ogImage = `https://${baseURL}/og?title=${encodeURIComponent(title)}`;
+  console.log('%csrc/app/page.tsx:15 object', 'color: #007acc;', ogImage);
 
   return {
     title,

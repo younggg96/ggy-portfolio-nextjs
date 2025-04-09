@@ -2,8 +2,6 @@
 
 This is my personal portfolio website built with Next.js, Tailwind CSS, and Once UI components. View the [live site here](https://guanggeng-website.web.app).
 
-![Portfolio Preview](public/images/cover.png)
-
 ## **Tech Stack**
 
 - **Framework**: Next.js 14

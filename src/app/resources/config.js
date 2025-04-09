@@ -1,4 +1,4 @@
-const baseURL = "https://ggy-portfolio-nextjs.vercel.app/";
+const baseURL = "https://ggy-portfolio-nextjs.vercel.app";
 
 const routes = {
   "/": true,

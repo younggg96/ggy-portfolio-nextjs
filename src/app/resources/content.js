@@ -41,7 +41,7 @@ const social = [
   },
   {
     name: "Instagram",
-    icon: "instagram",
+    icon: "Instagram",
     link: "https://www.instagram.com/young_gggy",
   },
 ];
@@ -194,7 +194,7 @@ const gallery = {
   label: "Gallery",
   title: "My photo gallery",
   description: `A photo collection by ${person.name}`,
-  images: [], // 每个图片对象应该包含 { src: string; alt: string; orientation: "horizontal" | "vertical" }
+  images: [],
 };
 
 export { person, social, newsletter, home, about, blog, work, gallery };
