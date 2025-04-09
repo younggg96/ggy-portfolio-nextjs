@@ -39,14 +39,17 @@ interface MailchimpProps {
 export const Mailchimp = ({ newsletter }: MailchimpProps) => {
   const handleEmailClick = (e: React.MouseEvent) => {
     e.preventDefault();
-    window.open('mailto:yangguanggeng960123@gmail.com', '_blank');
+    window.open("mailto:yangguanggeng960123@gmail.com", "_blank");
   };
 
   const handleResumeClick = (e: React.MouseEvent) => {
     e.preventDefault();
     // TODO: Add resume download logic
     // https://drive.google.com/file/d/12ZCxWFK9ZlPVvr2YyOzAFCquCFDaVmfw/view?usp=sharing
-    window.open("https://drive.google.com/file/d/12ZCxWFK9ZlPVvr2YyOzAFCquCFDaVmfw/view?usp=sharing", "_blank");
+    window.open(
+      "https://drive.google.com/file/d/12ZCxWFK9ZlPVvr2YyOzAFCquCFDaVmfw/view?usp=sharing",
+      "_blank"
+    );
   };
 
   return (
@@ -129,14 +132,17 @@ export const Mailchimp = ({ newsletter }: MailchimpProps) => {
         {newsletter.description}
       </Text>
       <Flex fillWidth maxWidth={24} gap="8">
-        <Flex height="48" vertical="center" align="center" gap="8">
-          <Button onClick={handleEmailClick} size="m" prefixIcon="email">
-            Send Message
-          </Button>
-          <Button onClick={handleResumeClick} size="m" prefixIcon="IoDownloadOutline">
-            Download Resume
-          </Button>
-        </Flex>
+        <Button onClick={handleEmailClick} size="m" prefixIcon="email">
+          Send Message
+        </Button>
+        <Button
+          onClick={handleResumeClick}
+          className="flex-1"
+          size="m"
+          prefixIcon="IoDownloadOutline"
+        >
+          Download Resume
+        </Button>
       </Flex>
     </Column>
   );
