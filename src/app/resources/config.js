@@ -1,17 +1,17 @@
-const baseURL = "demo.magic-portfolio.com";
+const baseURL = "https://ggy-portfolio-nextjs.vercel.app/";
 
 const routes = {
   "/": true,
   "/about": true,
-  "/work": true,
-  "/blog": true,
-  "/gallery": true,
+  // "/work": true,
+  // "/blog": true,
+  // "/gallery": true,
 };
 
 // Enable password protection on selected routes
 // Set password in the .env file, refer to .env.example
 const protectedRoutes = {
-  "/work/automate-design-handovers-with-a-figma-to-code-pipeline": true,
+  "/work/automate-design-handovers-with-a-figma-to-code-pipeline": false,
 };
 
 const style = {
