@@ -1,10 +1,21 @@
 "use client";
 
 import { mailchimp } from "@/app/resources";
-import { Button, Flex, Heading, Input, Text, Background, Column } from "@/once-ui/components";
+import {
+  Button,
+  Flex,
+  Heading,
+  Input,
+  Text,
+  Background,
+  Column,
+} from "@/once-ui/components";
 import { useState } from "react";
 
-function debounce<T extends (...args: any[]) => void>(func: T, delay: number): T {
+function debounce<T extends (...args: any[]) => void>(
+  func: T,
+  delay: number
+): T {
   let timeout: ReturnType<typeof setTimeout>;
   return ((...args: Parameters<T>) => {
     clearTimeout(timeout);
@@ -18,38 +29,24 @@ type NewsletterProps = {
   description: string | JSX.Element;
 };
 
-export const Mailchimp = ({ newsletter }: { newsletter: NewsletterProps }) => {
-  const [email, setEmail] = useState<string>("");
-  const [error, setError] = useState<string>("");
-  const [touched, setTouched] = useState<boolean>(false);
+interface MailchimpProps {
+  newsletter: {
+    title: React.ReactNode;
+    description: React.ReactNode;
+  };
+}
 
-  const validateEmail = (email: string): boolean => {
-    if (email === "") {
-      return true;
-    }
-
-    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    return emailPattern.test(email);
+export const Mailchimp = ({ newsletter }: MailchimpProps) => {
+  const handleEmailClick = (e: React.MouseEvent) => {
+    e.preventDefault();
+    window.open('mailto:yangguanggeng960123@gmail.com', '_blank');
   };
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const value = e.target.value;
-    setEmail(value);
-
-    if (!validateEmail(value)) {
-      setError("Please enter a valid email address.");
-    } else {
-      setError("");
-    }
-  };
-
-  const debouncedHandleChange = debounce(handleChange, 2000);
-
-  const handleBlur = () => {
-    setTouched(true);
-    if (!validateEmail(email)) {
-      setError("Please enter a valid email address.");
-    }
+  const handleResumeClick = (e: React.MouseEvent) => {
+    e.preventDefault();
+    // TODO: Add resume download logic
+    // https://drive.google.com/file/d/12ZCxWFK9ZlPVvr2YyOzAFCquCFDaVmfw/view?usp=sharing
+    window.open("https://drive.google.com/file/d/12ZCxWFK9ZlPVvr2YyOzAFCquCFDaVmfw/view?usp=sharing", "_blank");
   };
 
   return (
@@ -112,13 +109,18 @@ export const Mailchimp = ({ newsletter }: { newsletter: NewsletterProps }) => {
           opacity: mailchimp.effects.lines.opacity as any,
         }}
       />
-      <Heading style={{ position: "relative" }} marginBottom="s" variant="display-strong-xs">
+      <Heading
+        style={{ position: "relative", fontSize: "36px" }}
+        marginBottom="s"
+        variant="display-strong-xs"
+      >
         {newsletter.title}
       </Heading>
       <Text
         style={{
           position: "relative",
           maxWidth: "var(--responsive-width-xs)",
+          fontSize: "14px",
         }}
         wrap="balance"
         marginBottom="l"
@@ -126,68 +128,16 @@ export const Mailchimp = ({ newsletter }: { newsletter: NewsletterProps }) => {
       >
         {newsletter.description}
       </Text>
-      <form
-        style={{
-          width: "100%",
-          display: "flex",
-          justifyContent: "center",
-        }}
-        action={mailchimp.action}
-        method="post"
-        id="mc-embedded-subscribe-form"
-        name="mc-embedded-subscribe-form"
-      >
-        <Flex id="mc_embed_signup_scroll" fillWidth maxWidth={24} gap="8">
-          <Input
-            formNoValidate
-            labelAsPlaceholder
-            id="mce-EMAIL"
-            name="EMAIL"
-            type="email"
-            label="Email"
-            required
-            onChange={(e) => {
-              if (error) {
-                handleChange(e);
-              } else {
-                debouncedHandleChange(e);
-              }
-            }}
-            onBlur={handleBlur}
-            errorMessage={error}
-          />
-          <div style={{ display: "none" }}>
-            <input
-              type="checkbox"
-              readOnly
-              name="group[3492][1]"
-              id="mce-group[3492]-3492-0"
-              value=""
-              checked
-            />
-          </div>
-          <div id="mce-responses" className="clearfalse">
-            <div className="response" id="mce-error-response" style={{ display: "none" }}></div>
-            <div className="response" id="mce-success-response" style={{ display: "none" }}></div>
-          </div>
-          <div aria-hidden="true" style={{ position: "absolute", left: "-5000px" }}>
-            <input
-              type="text"
-              readOnly
-              name="b_c1a5a210340eb6c7bff33b2ba_0462d244aa"
-              tabIndex={-1}
-              value=""
-            />
-          </div>
-          <div className="clear">
-            <Flex height="48" vertical="center">
-              <Button id="mc-embedded-subscribe" value="Subscribe" size="m" fillWidth>
-                Subscribe
-              </Button>
-            </Flex>
-          </div>
+      <Flex fillWidth maxWidth={24} gap="8">
+        <Flex height="48" vertical="center" align="center" gap="8">
+          <Button onClick={handleEmailClick} size="m" prefixIcon="email">
+            Send Message
+          </Button>
+          <Button onClick={handleResumeClick} size="m" prefixIcon="IoDownloadOutline">
+            Download Resume
+          </Button>
         </Flex>
-      </form>
+      </Flex>
     </Column>
   );
 };

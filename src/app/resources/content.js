@@ -1,50 +1,48 @@
 import { InlineCode } from "@/once-ui/components";
 
 const person = {
-  firstName: "Selene",
-  lastName: "Yu",
+  firstName: "Guanggeng",
+  lastName: "Yang",
   get name() {
     return `${this.firstName} ${this.lastName}`;
   },
-  role: "Design Engineer",
-  avatar: "/images/avatar.jpg",
-  location: "Asia/Jakarta", // Expecting the IANA time zone identifier, e.g., 'Europe/Vienna'
-  languages: ["English", "Bahasa"], // optional: Leave the array empty if you don't want to display languages
+  role: "Senior Software Engineer",
+  avatar: "/images/avatar.png",
+  location: "America/Los_Angeles",
+  displayLocation: "Bay Area, CA",
+  languages: ["English", "Mandarin"],
 };
 
 const newsletter = {
   display: true,
-  title: <>Subscribe to {person.firstName}'s Newsletter</>,
+  title: <>Send me a message, I'll get back to you as soon as possible.</>,
   description: (
     <>
-      I occasionally write about design, technology, and share thoughts on the intersection of
-      creativity and engineering.
+      I'm always looking for new opportunities and challenges. If you have any questions or would like to discuss a project, please don't hesitate to contact me.
     </>
   ),
 };
 
 const social = [
-  // Links are automatically displayed.
-  // Import new icons in /once-ui/icons.ts
   {
     name: "GitHub",
     icon: "github",
-    link: "https://github.com/once-ui-system/nextjs-starter",
+    link: "https://github.com/younggeng",
   },
   {
     name: "LinkedIn",
     icon: "linkedin",
-    link: "https://www.linkedin.com/company/once-ui/",
-  },
-  {
-    name: "X",
-    icon: "x",
-    link: "",
+    link: "https://www.linkedin.com/in/guanggeng-yang",
   },
   {
     name: "Email",
     icon: "email",
-    link: "mailto:example@gmail.com",
+    link: "mailto:yangguanggeng960123@gmail.com",
+  },
+  {
+    name: "Instagram",
+    icon: "instagram",
+    link: "https://www.instagram.com/young_gggy",
   },
 ];
 
@@ -52,11 +50,11 @@ const home = {
   label: "Home",
   title: `${person.name}'s Portfolio`,
   description: `Portfolio website showcasing my work as a ${person.role}`,
-  headline: <>Design engineer and builder</>,
+  headline: <>Senior Software Engineer and System Architect</>,
   subline: (
     <>
-      I'm Selene, a design engineer at <InlineCode>FLY</InlineCode>, where I craft intuitive
-      <br /> user experiences. After hours, I build my own projects.
+      I'm Guanggeng, a Senior Software Engineer at <InlineCode>Vibrant Wellness</InlineCode>, where I craft scalable
+      <br /> web applications and lead technical migrations. After hours, I build my own projects.
     </>
   ),
 };
@@ -64,7 +62,7 @@ const home = {
 const about = {
   label: "About",
   title: "About me",
-  description: `Meet ${person.name}, ${person.role} from ${person.location}`,
+  description: `Meet ${person.name}, ${person.role} from ${person.displayLocation}`,
   tableOfContent: {
     display: true,
     subItems: false,
@@ -73,60 +71,70 @@ const about = {
     display: true,
   },
   calendar: {
-    display: true,
-    link: "https://cal.com",
+    display: false,
+    link: "",
   },
   intro: {
     display: true,
     title: "Introduction",
     description: (
       <>
-        Selene is a Jakarta-based design engineer with a passion for transforming complex challenges
-        into simple, elegant design solutions. Her work spans digital interfaces, interactive
-        experiences, and the convergence of design and technology.
+        Guanggeng is a Fremont-based Senior Software Engineer with a passion for building scalable web applications 
+        and leading technical migrations. His work spans frontend development, system architecture, and the intersection 
+        of performance optimization and user experience.
       </>
     ),
   },
   work: {
-    display: true, // set to false to hide this section
+    display: true,
     title: "Work Experience",
     experiences: [
       {
-        company: "FLY",
-        timeframe: "2022 - Present",
-        role: "Senior Design Engineer",
+        company: "Vibrant Wellness",
+        timeframe: "May 2024 - Present",
+        role: "Senior Software Engineer",
         achievements: [
           <>
-            Redesigned the UI/UX for the FLY platform, resulting in a 20% increase in user
-            engagement and 30% faster load times.
+            Spearheaded the migration from a legacy Vue 2 codebase to Next.js, React, and Tailwind CSS, resolving issues 
+            like slow build performance, SEO limitations, and UI inconsistency, while significantly improving code maintainability and
+            team efficiency through a modern, component-driven architecture.
           </>,
           <>
-            Spearheaded the integration of AI tools into design workflows, enabling designers to
-            iterate 50% faster.
+            Leveraged Next.js SSK/SSG to enhance SEO and product visibility, enabling faster indexing of product page; combined 
+            with performance optimizations such as above-the-fold content prioritization, dynamic rendering, and code splitting.
+          </>,
+          <>
+            Acted as frontend tech lead throughout the migration process, overseeing architecture planning and implementation,
+            mentoring junior developers, and establishing code quality standards through code reviews and pair programming.
+          </>,
+          <>
+            Established frontend development standards and a centralized knowledge base by defining reusable patterns,
+            automating code quality enforcement, and consolidating documentation for improved efficiency and cross-team collaboration.
           </>,
         ],
-        images: [
-          // optional: leave the array empty if you don't want to display images
-          {
-            src: "/images/projects/project-01/cover-01.jpg",
-            alt: "Once UI Project",
-            width: 16,
-            height: 9,
-          },
-        ],
+        images: [],
       },
       {
-        company: "Creativ3",
-        timeframe: "2018 - 2022",
-        role: "Lead Designer",
+        company: "Alexander-Anderson Real Estate Group",
+        timeframe: "Oct 2020 - Sep 2022",
+        role: "Software Engineer",
         achievements: [
           <>
-            Developed a design system that unified the brand across multiple platforms, improving
-            design consistency by 40%.
+            Designed and developed a cross-platform mobile application (CFREE Real Estate Exam Prep) from scratch using
+            React Native and Expo, successfully deployed to Google Play and Apple App Store, leading to a measurable
+            increase in user engagement.
           </>,
           <>
-            Led a cross-functional team to launch a new product line, contributing to a 15% increase
-            in overall company revenue.
+            Built custom UI components with UI Kitten 5, improving rendering performance and delivering a smoother, more responsive
+            user experience.
+          </>,
+          <>
+            Implemented core app functionalities including In-app Purchases, Push Notifications, Firebase Authentication, and
+            subscription management, integrating both frontend and backend technologies to support business logic and user flows.
+          </>,
+          <>
+            Developed and maintained an e-commerce website (recareercenter.com) for real estate education using WordPress and PHP,
+            enabling course purchases, content updates, and student access management.
           </>,
         ],
         images: [],
@@ -134,54 +142,37 @@ const about = {
     ],
   },
   studies: {
-    display: true, // set to false to hide this section
-    title: "Studies",
+    display: true,
+    title: "Education",
     institutions: [
       {
-        name: "University of Jakarta",
-        description: <>Studied software engineering.</>,
+        name: "Pace University, Seidenberg School of Computer Science and Information Systems",
+        description: <>Master of Science in Computer Science - GPA 3.8</>,
       },
       {
-        name: "Build the Future",
-        description: <>Studied online marketing and personal branding.</>,
+        name: "Human University of Chinese Medicine",
+        description: <>Bachelor of Engineering in Biology - GPA 3.5</>,
       },
     ],
   },
   technical: {
-    display: true, // set to false to hide this section
+    display: true,
     title: "Technical skills",
     skills: [
       {
-        title: "Figma",
-        description: <>Able to prototype in Figma with Once UI with unnatural speed.</>,
-        // optional: leave the array empty if you don't want to display images
-        images: [
-          {
-            src: "/images/projects/project-01/cover-02.jpg",
-            alt: "Project image",
-            width: 16,
-            height: 9,
-          },
-          {
-            src: "/images/projects/project-01/cover-03.jpg",
-            alt: "Project image",
-            width: 16,
-            height: 9,
-          },
-        ],
+        title: "Programming Languages",
+        description: <>JavaScript (ES6+), TypeScript, HTML5, CSS3, SQL, Python, Java, PHP, Node.js</>,
+        images: [],
       },
       {
-        title: "Next.js",
-        description: <>Building next gen apps with Next.js + Once UI + Supabase.</>,
-        // optional: leave the array empty if you don't want to display images
-        images: [
-          {
-            src: "/images/projects/project-01/cover-04.jpg",
-            alt: "Project image",
-            width: 16,
-            height: 9,
-          },
-        ],
+        title: "Frameworks & Libraries",
+        description: <>React, Vue.js, Angular, React Native, Redux, Next.js, Prisma, Nuxt.js</>,
+        images: [],
+      },
+      {
+        title: "Tools & Others",
+        description: <>Git, Firebase, MySQL, Express, RESTful APIs, Axios, Postman, Webpack, Vite, Babel, Jest, Tailwind CSS, Less/Sass, Agile, OOP, Figma, Adobe Photoshop, Google Analytics</>,
+        images: [],
       },
     ],
   },
@@ -189,97 +180,21 @@ const about = {
 
 const blog = {
   label: "Blog",
-  title: "Writing about design and tech...",
+  title: "Writing about software engineering and tech...",
   description: `Read what ${person.name} has been up to recently`,
-  // Create new blog posts by adding a new .mdx file to app/blog/posts
-  // All posts will be listed on the /blog route
 };
 
 const work = {
   label: "Work",
   title: "My projects",
-  description: `Design and dev projects by ${person.name}`,
-  // Create new project pages by adding a new .mdx file to app/blog/posts
-  // All projects will be listed on the /home and /work routes
+  description: `Software engineering projects by ${person.name}`,
 };
 
 const gallery = {
   label: "Gallery",
   title: "My photo gallery",
   description: `A photo collection by ${person.name}`,
-  // Images from https://pexels.com
-  images: [
-    {
-      src: "/images/gallery/img-01.jpg",
-      alt: "image",
-      orientation: "vertical",
-    },
-    {
-      src: "/images/gallery/img-02.jpg",
-      alt: "image",
-      orientation: "horizontal",
-    },
-    {
-      src: "/images/gallery/img-03.jpg",
-      alt: "image",
-      orientation: "vertical",
-    },
-    {
-      src: "/images/gallery/img-04.jpg",
-      alt: "image",
-      orientation: "horizontal",
-    },
-    {
-      src: "/images/gallery/img-05.jpg",
-      alt: "image",
-      orientation: "horizontal",
-    },
-    {
-      src: "/images/gallery/img-06.jpg",
-      alt: "image",
-      orientation: "vertical",
-    },
-    {
-      src: "/images/gallery/img-07.jpg",
-      alt: "image",
-      orientation: "horizontal",
-    },
-    {
-      src: "/images/gallery/img-08.jpg",
-      alt: "image",
-      orientation: "vertical",
-    },
-    {
-      src: "/images/gallery/img-09.jpg",
-      alt: "image",
-      orientation: "horizontal",
-    },
-    {
-      src: "/images/gallery/img-10.jpg",
-      alt: "image",
-      orientation: "horizontal",
-    },
-    {
-      src: "/images/gallery/img-11.jpg",
-      alt: "image",
-      orientation: "vertical",
-    },
-    {
-      src: "/images/gallery/img-12.jpg",
-      alt: "image",
-      orientation: "horizontal",
-    },
-    {
-      src: "/images/gallery/img-13.jpg",
-      alt: "image",
-      orientation: "horizontal",
-    },
-    {
-      src: "/images/gallery/img-14.jpg",
-      alt: "image",
-      orientation: "horizontal",
-    },
-  ],
+  images: [],
 };
 
 export { person, social, newsletter, home, about, blog, work, gallery };

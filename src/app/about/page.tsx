@@ -163,7 +163,7 @@ export default function About() {
                 />
               </Flex>
             )}
-            <Heading className={styles.textAlign} variant="display-strong-xl">
+            <Heading id="name" role="heading" aria-level={1} style={{ marginBottom: "24px" }} className={styles.textAlign} variant="display-strong-xl">
               {person.name}
             </Heading>
             <Text

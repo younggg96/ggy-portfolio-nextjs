@@ -2,16 +2,13 @@
 
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
-
 import { Fade, Flex, Line, ToggleButton } from "@/once-ui/components";
-import styles from "@/components/Header.module.scss";
-
 import { routes, display } from "@/app/resources";
 import { person, home, about, blog, work, gallery } from "@/app/resources/content";
 
 type TimeDisplayProps = {
   timeZone: string;
-  locale?: string; // Optionally allow locale, defaulting to 'en-GB'
+  locale?: string;
 };
 
 const TimeDisplay: React.FC<TimeDisplayProps> = ({ timeZone, locale = "en-GB" }) => {
@@ -47,19 +44,22 @@ export const Header = () => {
 
   return (
     <>
-      <Fade hide="s" fillWidth position="fixed" height="80" zIndex={9} />
-      <Fade show="s" fillWidth position="fixed" bottom="0" to="top" height="80" zIndex={9} />
+      <Fade hide="s" fillWidth position="fixed" height="80" zIndex={9}>
+        <div className="absolute inset-0 bg-gradient-to-b from-page-background to-transparent backdrop-blur-sm pointer-events-none" />
+      </Fade>
+      <Fade show="s" fillWidth position="fixed" bottom="0" to="top" height="80" zIndex={9}>
+        <div className="absolute inset-0 bg-gradient-to-t from-page-background to-transparent backdrop-blur-sm pointer-events-none" />
+      </Fade>
       <Flex
-        fitHeight
-        className={styles.position}
         as="header"
+        className="sticky top-0 sm:fixed sm:bottom-6 sm:top-auto"
         zIndex={9}
         fillWidth
         padding="8"
         horizontal="center"
       >
         <Flex paddingLeft="12" fillWidth vertical="center" textVariant="body-default-s">
-          {display.location && <Flex hide="s">{person.location}</Flex>}
+          {display.location && <Flex hide="s">{person.displayLocation}</Flex>}
         </Flex>
         <Flex fillWidth horizontal="center">
           <Flex

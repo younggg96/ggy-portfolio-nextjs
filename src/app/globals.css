@@ -1,0 +1,50 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --page-background: #ffffff;
+  --surface-background: #ffffff;
+  --surface-background-dark: #000000;
+  --neutral-100: #f5f5f5;
+  --neutral-200: #e5e5e5;
+  --neutral-300: #d4d4d4;
+  --neutral-400: #a3a3a3;
+  --neutral-500: #737373;
+  --neutral-600: #525252;
+  --neutral-700: #404040;
+  --neutral-800: #262626;
+  --neutral-900: #171717;
+  --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+  --z-header: 50;
+}
+
+[data-theme="dark"] {
+  --page-background: #000000;
+  --surface-background: #000000;
+  --surface-background-dark: #ffffff;
+}
+
+@layer base {
+  body {
+    @apply bg-page-background text-neutral-900 dark:text-neutral-100;
+  }
+}
+
+@layer components {
+  .bg-surface {
+    @apply bg-surface dark:bg-surface-dark;
+  }
+  
+  .border-neutral-medium {
+    @apply border-neutral-200 dark:border-neutral-800;
+  }
+  
+  .text-neutral-strong {
+    @apply text-neutral-900 dark:text-neutral-100;
+  }
+  
+  .text-neutral-weak {
+    @apply text-neutral-500 dark:text-neutral-400;
+  }
+} 
