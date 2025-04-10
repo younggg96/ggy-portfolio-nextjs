@@ -18,7 +18,9 @@ const newsletter = {
   title: <>Send me a message, I'll get back to you as soon as possible.</>,
   description: (
     <>
-      I'm always looking for new opportunities and challenges. If you have any questions or would like to discuss a project, please don't hesitate to contact me.
+      I'm always looking for new opportunities and challenges. If you have any
+      questions or would like to discuss a project, please don't hesitate to
+      contact me.
     </>
   ),
 };
@@ -27,12 +29,12 @@ const social = [
   {
     name: "GitHub",
     icon: "github",
-    link: "https://github.com/younggeng",
+    link: "https://github.com/younggg96",
   },
   {
     name: "LinkedIn",
     icon: "linkedin",
-    link: "https://www.linkedin.com/in/guanggeng-yang",
+    link: "https://www.linkedin.com/in/guanggengyang/",
   },
   {
     name: "Email",
@@ -53,8 +55,10 @@ const home = {
   headline: <>Senior Software Engineer & Full-Stack Architect</>,
   subline: (
     <>
-      I'm Guanggeng, a Senior Software Engineer at <InlineCode>Vibrant Wellness</InlineCode>, specializing in 
-      <br /> scalable architecture design and enterprise-level application development. I lead technical transformations 
+      I'm Guanggeng, a Senior Software Engineer at{" "}
+      <InlineCode>Vibrant Wellness</InlineCode>, specializing in
+      <br /> scalable architecture design and enterprise-level application
+      development. I lead technical transformations
       <br /> and mentor teams while building innovative solutions.
     </>
   ),
@@ -80,9 +84,15 @@ const about = {
     title: "Introduction",
     description: (
       <>
-        Guanggeng is a Fremont-based Senior Software Engineer with a passion for building scalable web applications 
-        and leading technical migrations. His work spans frontend development, system architecture, and the intersection 
-        of performance optimization and user experience.
+        Guanggeng is a Fremont-based Senior Software Engineer with a passion for
+        building scalable web applications and leading technical migrations. His
+        work spans frontend development, system architecture, and the
+        intersection of performance optimization and user experience. With
+        expertise in modern JavaScript frameworks and cloud technologies, he
+        specializes in transforming legacy systems into robust, maintainable
+        solutions. His approach combines technical excellence with a strong
+        focus on team collaboration and knowledge sharing, ensuring sustainable
+        growth and innovation in every project.
       </>
     ),
   },
@@ -96,24 +106,73 @@ const about = {
         role: "Senior Software Engineer",
         achievements: [
           <>
-            Spearheaded the migration from a legacy Vue 2 codebase to Next.js, React, and Tailwind CSS, resolving issues 
-            like slow build performance, SEO limitations, and UI inconsistency, while significantly improving code maintainability and
-            team efficiency through a modern, component-driven architecture.
+            Spearheaded the migration from a legacy Vue 2 codebase to Next.js,
+            React, and Tailwind CSS, resolving issues like slow build
+            performance, SEO limitations, and UI inconsistency, while
+            significantly improving code maintainability and team efficiency
+            through a modern, component-driven architecture.
           </>,
           <>
-            Leveraged Next.js SSK/SSG to enhance SEO and product visibility, enabling faster indexing of product page; combined 
-            with performance optimizations such as above-the-fold content prioritization, dynamic rendering, and code splitting.
+            Leveraged Next.js SSK/SSG to enhance SEO and product visibility,
+            enabling faster indexing of product page; combined with performance
+            optimizations such as above-the-fold content prioritization, dynamic
+            rendering, and code splitting.
           </>,
           <>
-            Acted as frontend tech lead throughout the migration process, overseeing architecture planning and implementation,
-            mentoring junior developers, and establishing code quality standards through code reviews and pair programming.
+            Acted as frontend tech lead throughout the migration process,
+            overseeing architecture planning and implementation, mentoring
+            junior developers, and establishing code quality standards through
+            code reviews and pair programming.
           </>,
           <>
-            Established frontend development standards and a centralized knowledge base by defining reusable patterns,
-            automating code quality enforcement, and consolidating documentation for improved efficiency and cross-team collaboration.
+            Established frontend development standards and a centralized
+            knowledge base by defining reusable patterns, automating code
+            quality enforcement, and consolidating documentation for improved
+            efficiency and cross-team collaboration.
           </>,
         ],
-        images: [],
+        logo: {
+          src: "/images/companies/vibrant-wellness-logo.png",
+          alt: "Vibrant Wellness Logo",
+        },
+      },
+      {
+        company: "Vibrant Wellness",
+        timeframe: "Jul 2021 - May 2024",
+        role: "Frontend Engineer",
+        achievements: [
+          <>
+            Developed a scalable e-commerce platform (vibrant-wellness.com) for
+            the medical industry, with a strong focus on responsive design,
+            cross-browser compatibility, and performance optimization—delivering
+            a seamless user experience across devices
+          </>,
+          <>
+            Engineered web and mobile-compatible interfaces using Vue 2, and
+            implemented Vuex for centralized state management, resulting in
+            improved code maintainability and streamlined feature development.
+          </>,
+          <>
+            Designed and implemented a Micro-Frontend architecture using
+            JavaScript and Webpack, enabling modular development across teams
+            and reducing code duplication by approximately 10%.
+          </>,
+          <>
+            Built a flexible SCSS theming system to support white-label
+            storefronts, aligning with diverse brand requirements; collaborated
+            closely with UX designers to maintain visual consistency and meet
+            performance standards.
+          </>,
+          <>
+            Operated within a fast-paced Agile environment, contributing to
+            sprint planning, daily standups, and backlog refinement using JIRA,
+            ensuring timely delivery and continuous product iteration。
+          </>,
+        ],
+        logo: {
+          src: "/images/companies/vibrant-wellness-logo.png",
+          alt: "Vibrant Wellness Logo",
+        },
       },
       {
         company: "Alexander-Anderson Real Estate Group",
@@ -121,24 +180,32 @@ const about = {
         role: "Software Engineer",
         achievements: [
           <>
-            Designed and developed a cross-platform mobile application (CFREE Real Estate Exam Prep) from scratch using
-            React Native and Expo, successfully deployed to Google Play and Apple App Store, leading to a measurable
-            increase in user engagement.
+            Designed and developed a cross-platform mobile application (CFREE
+            Real Estate Exam Prep) from scratch using React Native and Expo,
+            successfully deployed to Google Play and Apple App Store, leading to
+            a measurable increase in user engagement.
           </>,
           <>
-            Built custom UI components with UI Kitten 5, improving rendering performance and delivering a smoother, more responsive
-            user experience.
+            Built custom UI components with UI Kitten 5, improving rendering
+            performance and delivering a smoother, more responsive user
+            experience.
           </>,
           <>
-            Implemented core app functionalities including In-app Purchases, Push Notifications, Firebase Authentication, and
-            subscription management, integrating both frontend and backend technologies to support business logic and user flows.
+            Implemented core app functionalities including In-app Purchases,
+            Push Notifications, Firebase Authentication, and subscription
+            management, integrating both frontend and backend technologies to
+            support business logic and user flows.
           </>,
           <>
-            Developed and maintained an e-commerce website (recareercenter.com) for real estate education using WordPress and PHP,
-            enabling course purchases, content updates, and student access management.
+            Developed and maintained an e-commerce website (recareercenter.com)
+            for real estate education using WordPress and PHP, enabling course
+            purchases, content updates, and student access management.
           </>,
         ],
-        images: [],
+        logo: {
+          src: "/images/companies/alexander-anderson-logo.png",
+          alt: "Alexander-Anderson Logo",
+        },
       },
     ],
   },
@@ -162,17 +229,33 @@ const about = {
     skills: [
       {
         title: "Programming Languages",
-        description: <>JavaScript (ES6+), TypeScript, HTML5, CSS3, SQL, Python, Java, PHP, Node.js</>,
+        description: (
+          <>
+            JavaScript (ES6+), TypeScript, HTML5, CSS3, SQL, Python, Java, PHP,
+            Node.js
+          </>
+        ),
         images: [],
       },
       {
         title: "Frameworks & Libraries",
-        description: <>React, Vue.js, Angular, React Native, Redux, Next.js, Prisma, Nuxt.js</>,
+        description: (
+          <>
+            React, Vue.js, Angular, React Native, Redux, Next.js, Prisma,
+            Nuxt.js
+          </>
+        ),
         images: [],
       },
       {
         title: "Tools & Others",
-        description: <>Git, Firebase, MySQL, Express, RESTful APIs, Axios, Postman, Webpack, Vite, Babel, Jest, Tailwind CSS, Less/Sass, Agile, OOP, Figma, Adobe Photoshop, Google Analytics</>,
+        description: (
+          <>
+            Git, Firebase, MySQL, Express, RESTful APIs, Axios, Postman,
+            Webpack, Vite, Babel, Jest, Tailwind CSS, Less/Sass, Agile, OOP,
+            Figma, Adobe Photoshop, Google Analytics
+          </>
+        ),
         images: [],
       },
     ],
