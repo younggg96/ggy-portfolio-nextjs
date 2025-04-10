@@ -6,6 +6,7 @@ import {
   Heading,
   Icon,
   IconButton,
+  RevealFx,
   SmartImage,
   Tag,
   Text,
@@ -13,7 +14,8 @@ import {
 import { baseURL } from "@/app/resources";
 import TableOfContents from "@/components/about/TableOfContents";
 import styles from "@/components/about/about.module.scss";
-import { person, about, social } from "@/app/resources/content";
+import { person, about, social, newsletter } from "@/app/resources/content";
+import { Mailchimp } from "@/components/Mailchimp";
 
 export async function generateMetadata() {
   const title = about.title;
@@ -232,7 +234,6 @@ export default function About() {
               {about.intro.description}
             </Column>
           )}
-
           {about.work.display && (
             <>
               <Heading

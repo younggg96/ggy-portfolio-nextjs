@@ -94,12 +94,12 @@ const mailchimp = {
       opacity: 100,
     },
     lines: {
-      display: false,
+      display: true,
       color: "neutral-alpha-weak",
       opacity: 100,
     },
     grid: {
-      display: true,
+      display: false,
       color: "neutral-alpha-weak",
       opacity: 100,
     },

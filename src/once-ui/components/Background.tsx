@@ -181,7 +181,7 @@ const Background = forwardRef<HTMLDivElement, BackgroundProps>(
         className={classNames(mask && styles.mask, className)}
         top="0"
         left="0"
-        zIndex={0}
+        zIndex={1}
         overflow="hidden"
         style={{
           ...maskStyle(),

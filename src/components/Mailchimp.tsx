@@ -64,6 +64,7 @@ export const Mailchimp = ({ newsletter }: MailchimpProps) => {
       align="center"
       background="surface"
       border="neutral-medium"
+      zIndex={10}
     >
       <Background
         mask={{
