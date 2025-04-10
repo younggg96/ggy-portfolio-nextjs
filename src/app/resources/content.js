@@ -50,11 +50,12 @@ const home = {
   label: "Home",
   title: `${person.name}'s Portfolio`,
   description: `Portfolio website showcasing my work as a ${person.role}`,
-  headline: <>Senior Software Engineer and Frontend System Architect</>,
+  headline: <>Senior Software Engineer & Full-Stack Architect</>,
   subline: (
     <>
-      I'm Guanggeng, a Senior Software Engineer at <InlineCode>Vibrant Wellness</InlineCode>, where I craft scalable
-      <br /> web applications and lead technical migrations. After hours, I build my own projects.
+      I'm Guanggeng, a Senior Software Engineer at <InlineCode>Vibrant Wellness</InlineCode>, specializing in 
+      <br /> scalable architecture design and enterprise-level application development. I lead technical transformations 
+      <br /> and mentor teams while building innovative solutions.
     </>
   ),
 };
