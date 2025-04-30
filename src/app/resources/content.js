@@ -278,6 +278,28 @@ const gallery = {
   label: "Gallery",
   title: "Gallery",
   description: `A collection of images from ${person.name}`,
+  images: [
+    {
+      src: "/images/gallery/img1.jpg",
+      alt: "Architecture design showcase",
+      orientation: "horizontal"
+    },
+    {
+      src: "/images/gallery/img2.jpg",
+      alt: "Modern UI components",
+      orientation: "vertical"
+    },
+    {
+      src: "/images/gallery/img3.jpg",
+      alt: "Web development project",
+      orientation: "horizontal"
+    },
+    {
+      src: "/images/gallery/img4.jpg",
+      alt: "Mobile responsive design",
+      orientation: "vertical"
+    }
+  ]
 };
 
 const articles = {
