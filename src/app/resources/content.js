@@ -276,9 +276,45 @@ const work = {
 
 const gallery = {
   label: "Gallery",
-  title: "My photo gallery",
-  description: `A photo collection by ${person.name}`,
-  images: [],
+  title: "Gallery",
+  description: `A collection of images from ${person.name}`,
 };
 
-export { person, social, newsletter, home, about, blog, work, gallery };
+const articles = {
+  label: "Articles",
+  title: "Tech Articles",
+  description:
+    "A collection of technical articles, tutorials and insights about web development, architecture design and software engineering",
+  data: [
+    {
+      id: 0,
+      title: "Building Scalable React Applications",
+      description:
+        "Learn how to architect large-scale React applications with best practices for state management, component organization, and performance optimization. This article covers advanced patterns and techniques for building maintainable React codebases.",
+      date: "May 15, 2024",
+      image: "/images/articles/img1.jpg",
+      tags: ["React", "Architecture", "Performance"],
+    },
+    {
+      id: 1,
+      title: "System Design: Designing the StarWidget",
+      description:
+        "A comprehensive guide to migrating your Vue 2 application to Next.js, including strategies for handling state, routing, and server-side rendering. Learn how to plan and execute a phased migration while maintaining application functionality.",
+      date: "April 29, 2025",
+      image: "/images/articles/img2.jpg",
+      tags: ["System Design"],
+    },
+  ],
+};
+
+export {
+  person,
+  social,
+  newsletter,
+  home,
+  about,
+  blog,
+  work,
+  gallery,
+  articles,
+};

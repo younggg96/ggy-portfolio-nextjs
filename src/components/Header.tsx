@@ -4,7 +4,7 @@ import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import { Fade, Flex, Line, ToggleButton } from "@/once-ui/components";
 import { routes, display } from "@/app/resources";
-import { person, home, about, blog, work, gallery } from "@/app/resources/content";
+import { person, home, about, blog, work, gallery, articles } from "@/app/resources/content";
 
 type TimeDisplayProps = {
   timeZone: string;
@@ -89,7 +89,7 @@ export const Header = () => {
                   />
                 </>
               )}
-              {routes["/work"] && (
+              {/* {routes["/work"] && (
                 <>
                   <ToggleButton
                     className="s-flex-hide"
@@ -137,6 +137,23 @@ export const Header = () => {
                     prefixIcon="gallery"
                     href="/gallery"
                     selected={pathname.startsWith("/gallery")}
+                  />
+                </>
+              )} */}
+              {routes["/articles"] && (
+                <>
+                  <ToggleButton
+                    className="s-flex-hide"
+                    prefixIcon="document"
+                    href="/articles"
+                    label={articles.label}
+                    selected={pathname.startsWith("/articles")}
+                  />
+                  <ToggleButton
+                    className="s-flex-show"
+                    prefixIcon="document"
+                    href="/articles"
+                    selected={pathname.startsWith("/articles")}
                   />
                 </>
               )}
