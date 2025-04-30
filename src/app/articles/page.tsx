@@ -27,15 +27,26 @@ export default function Articles() {
         <>
           {articlesData.map((article, index) => (
             <Link href={"/articles/" + article.id} key={index}>
-              <Flex className="border rounded-sm overflow-hidden rounded-lg shadow-sm transition-shadow duration-300 group-hover:shadow-lg">
-                <Image
-                  src={article.image}
-                  alt={article.title}
-                  width={360}
-                  height={240}
-                  className="object-cover transition-transform duration-300 group-hover:scale-105"
-                />
-                <Column gap="s" padding="m">
+              <Flex direction="row" mobileDirection="column">
+                <div className="s-flex-hide">
+                  <Image
+                    src={article.image}
+                    alt={article.title}
+                    width={360}
+                    height={240}
+                    className="object-cover transition-transform duration-300 group-hover:scale-105"
+                  />
+                </div>
+                <div className="s-flex-show">
+                  <Image
+                    src={article.image}
+                    alt={article.title}
+                    width={360}
+                    height={240}
+                    className="w-full object-cover transition-transform duration-300 group-hover:scale-105"
+                  />
+                </div>
+                <Column gap="s" padding="m" fillWidth>
                   <Text
                     variant="body-default-s"
                     className="text-neutral-500 dark:text-neutral-400"

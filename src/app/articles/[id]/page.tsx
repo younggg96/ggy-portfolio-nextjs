@@ -47,8 +47,8 @@ export default async function ArticleDetail({ params }: { params: Params }) {
         <Image
           src={article.image}
           alt={article.title}
-          width={320}
-          height={240}
+          width={1920}
+          height={1080}
           className={styles.articleImage}
           priority
         />
