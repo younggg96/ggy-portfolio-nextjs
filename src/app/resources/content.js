@@ -293,6 +293,7 @@ const articles = {
         "Learn how to architect large-scale React applications with best practices for state management, component organization, and performance optimization. This article covers advanced patterns and techniques for building maintainable React codebases.",
       date: "May 15, 2024",
       image: "/images/articles/img1.jpg",
+      link: "/articles/0",
       tags: ["React", "Architecture", "Performance"],
     },
     {
@@ -302,6 +303,7 @@ const articles = {
         "A comprehensive guide to migrating your Vue 2 application to Next.js, including strategies for handling state, routing, and server-side rendering. Learn how to plan and execute a phased migration while maintaining application functionality.",
       date: "April 29, 2025",
       image: "/images/articles/img2.jpg",
+      link: "/articles/1",
       tags: ["System Design"],
     },
   ],
