@@ -328,6 +328,16 @@ const articles = {
       link: "/articles/1",
       tags: ["System Design"],
     },
+    {
+      id: 2,
+      title: "Behavioral Interview Questions",
+      description:
+        "A collection of behavioral interview questions that are commonly asked in technical interviews. Learn how to prepare for these questions and answer them confidently.",
+      date: "May 1, 2025",
+      image: "/images/articles/img3.jpg",
+      link: "/articles/2",
+      tags: ["Behavioral Interview", "Frontend Interview"],
+    },
   ],
 };
 
