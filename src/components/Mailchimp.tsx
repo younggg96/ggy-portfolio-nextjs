@@ -47,7 +47,7 @@ export const Mailchimp = ({ newsletter }: MailchimpProps) => {
     // TODO: Add resume download logic
     // https://drive.google.com/file/d/12ZCxWFK9ZlPVvr2YyOzAFCquCFDaVmfw/view?usp=sharing
     window.open(
-      "https://drive.google.com/file/d/12ZCxWFK9ZlPVvr2YyOzAFCquCFDaVmfw/view?usp=sharing",
+      "https://drive.google.com/file/d/1LQ12Pq9m5gTe2UajrtYseGy1P92jPynD/view?usp=sharing",
       "_blank"
     );
   };
