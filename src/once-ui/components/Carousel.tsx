@@ -6,6 +6,7 @@ import { useEffect, useState, useRef } from "react";
 interface Image {
   src: string;
   alt: string;
+  key?: string;
 }
 
 interface CarouselProps extends React.ComponentProps<typeof Flex> {
@@ -106,9 +107,9 @@ const Carousel: React.FC<CarouselProps> = ({
         <>
           {indicator === "line" ? (
             <Flex gap="4" paddingX="s" fillWidth horizontal="center">
-              {images.map((_, index) => (
+              {images.map((image, index) => (
                 <Flex
-                  key={index}
+                  key={image.key || `line-${index}`}
                   onClick={() => handleControlClick(index)}
                   style={{
                     background:
@@ -127,9 +128,12 @@ const Carousel: React.FC<CarouselProps> = ({
             <Scroller fillWidth gap="4" onItemClick={handleControlClick}>
               {images.map((image, index) => (
                 <Flex
-                  key={index}
+                  key={image.key || `thumb-${index}`}
                   style={{
-                    border: activeIndex === index ? "2px solid var(--brand-solid-strong)" : "none",
+                    border:
+                      activeIndex === index
+                        ? "2px solid var(--brand-solid-strong)"
+                        : "none",
                     borderRadius: "var(--radius-m-nest-4)",
                     transition: "border 0.3s ease",
                   }}

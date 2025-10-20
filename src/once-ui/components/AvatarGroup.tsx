@@ -7,7 +7,7 @@ import styles from "./AvatarGroup.module.scss";
 import classNames from "classnames";
 
 interface AvatarGroupProps extends React.ComponentProps<typeof Flex> {
-  avatars: AvatarProps[];
+  avatars: (AvatarProps & { key?: string })[];
   size?: "xs" | "s" | "m" | "l" | "xl";
   reverse?: boolean;
   limit?: number;
@@ -16,9 +16,13 @@ interface AvatarGroupProps extends React.ComponentProps<typeof Flex> {
 }
 
 const AvatarGroup = forwardRef<HTMLDivElement, AvatarGroupProps>(
-  ({ avatars, size = "m", reverse = false, limit, className, style, ...rest }, ref) => {
+  (
+    { avatars, size = "m", reverse = false, limit, className, style, ...rest },
+    ref
+  ) => {
     const displayedAvatars = limit ? avatars.slice(0, limit) : avatars;
-    const remainingCount = limit && avatars.length > limit ? avatars.length - limit : 0;
+    const remainingCount =
+      limit && avatars.length > limit ? avatars.length - limit : 0;
 
     return (
       <Flex
@@ -30,19 +34,22 @@ const AvatarGroup = forwardRef<HTMLDivElement, AvatarGroupProps>(
         zIndex={0}
         {...rest}
       >
-        {displayedAvatars.map((avatarProps, index) => (
-          <Avatar
-            position="relative"
-            key={index}
-            size={size}
-            {...avatarProps}
-            className={styles.avatar}
-            style={{
-              ...avatarProps.style,
-              zIndex: reverse ? displayedAvatars.length - index : index + 1,
-            }}
-          />
-        ))}
+        {displayedAvatars.map((avatarProps, index) => {
+          const { key: avatarKey, ...restProps } = avatarProps;
+          return (
+            <Avatar
+              position="relative"
+              key={avatarKey || `avatar-${index}`}
+              size={size}
+              {...restProps}
+              className={styles.avatar}
+              style={{
+                ...restProps.style,
+                zIndex: reverse ? displayedAvatars.length - index : index + 1,
+              }}
+            />
+          );
+        })}
         {remainingCount > 0 && (
           <Avatar
             value={`+${remainingCount}`}
@@ -56,7 +63,7 @@ const AvatarGroup = forwardRef<HTMLDivElement, AvatarGroupProps>(
         )}
       </Flex>
     );
-  },
+  }
 );
 
 AvatarGroup.displayName = "AvatarGroup";

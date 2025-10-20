@@ -32,7 +32,10 @@ export function Projects({ range }: ProjectsProps) {
           description={post.metadata.summary}
           content={post.content}
           avatars={
-            post.metadata.team?.map((member) => ({ src: member.avatar })) || []
+            post.metadata.team?.map((member, idx) => ({
+              src: member.avatar,
+              key: `${post.slug}-${idx}`,
+            })) || []
           }
           link={post.metadata.link || ""}
         />
