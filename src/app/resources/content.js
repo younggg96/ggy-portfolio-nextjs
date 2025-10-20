@@ -56,9 +56,11 @@ const home = {
   subline: (
     <>
       I'm Guanggeng, a Senior Software Engineer at{" "}
-      <InlineCode>Vibrant Wellness</InlineCode>, leading end-to-end rearchitecture of medical e-commerce platforms.
+      <InlineCode>Vibrant Wellness</InlineCode>, leading end-to-end
+      rearchitecture of medical e-commerce platforms.
       <br /> I specialize in migrating legacy systems to modern architectures,
-      <br /> optimizing performance, and leading frontend teams to deliver scalable solutions.
+      <br /> optimizing performance, and leading frontend teams to deliver
+      scalable solutions.
     </>
   ),
 };
@@ -85,14 +87,15 @@ const about = {
       <>
         Guanggeng is a Fremont-based Senior Software Engineer with a passion for
         building scalable web applications and leading technical migrations. His
-        expertise includes end-to-end rearchitecture of medical e-commerce platforms,
-        migrating from legacy Vue 2 stacks to Next.js/React.js, and achieving significant
-        performance improvements. With a strong background in both frontend and mobile
-        development, he has successfully improved GTmetrix Performance Grade from D to A,
-        reduced LCP by 3.1s to 1.2s, and boosted mobile conversion rates by 22%.
-        His approach combines technical excellence with leadership skills, having led
-        3-person teams in agile environments while implementing robust testing strategies
-        and establishing SEO-optimized architectures.
+        expertise includes end-to-end rearchitecture of medical e-commerce
+        platforms, migrating from legacy Vue 2 stacks to Next.js/React.js, and
+        achieving significant performance improvements. With a strong background
+        in both frontend and mobile development, he has successfully improved
+        GTmetrix Performance Grade from D to A, reduced LCP by 3.1s to 1.2s, and
+        boosted mobile conversion rates by 22%. His approach combines technical
+        excellence with leadership skills, having led 3-person teams in agile
+        environments while implementing robust testing strategies and
+        establishing SEO-optimized architectures.
       </>
     ),
   },
@@ -106,31 +109,71 @@ const about = {
         role: "Senior Software Engineer",
         achievements: [
           <>
-            Led the end-to-end rearchitecture of a medical e-commerce platform, migrating from a legacy Vue 2 stack to Next.js/React.js, addressing critical issues in build performance, SEO limitations, and UI scalability and atomic design.
+            Led the end-to-end rearchitecture of a medical e-commerce platform,
+            migrating from a legacy Vue 2 stack to Next.js/React.js, addressing
+            critical issues in build performance, SEO limitations, and UI
+            scalability and atomic design.
           </>,
           <>
-            Improved performance through Next.js SSR/SSG implementation, boosting GTmetrix Performance Grade from D to A, reducing LCP from 3.1s to 1.2s, Fully Loaded Time from 8.4s to 1.3s, page size by 85%, and HTTP requests by 60%, resulting in faster page interaction and seamless browsing.
+            Improved performance through Next.js SSR/SSG implementation,
+            boosting GTmetrix Performance Grade from D to A, reducing LCP from
+            3.1s to 1.2s, Fully Loaded Time from 8.4s to 1.3s, page size by 85%,
+            and HTTP requests by 60%, resulting in faster page interaction and
+            seamless browsing.
           </>,
           <>
-            Established SEO-optimized architecture using SSR, semantic HTML, and metadata. Elevated Lighthouse SEO scores from 67 to 100 by resolving missing meta descriptions, alt attributes, and crawlability issues, significantly enhancing discoverability with projected organic visibility uplift of 30-40%.
+            Established SEO-optimized architecture using SSR, semantic HTML, and
+            metadata. Elevated Lighthouse SEO scores from 67 to 100 by resolving
+            missing meta descriptions, alt attributes, and crawlability issues,
+            significantly enhancing discoverability with projected organic
+            visibility uplift of 30-40%.
           </>,
           <>
-            Developed and executed a robust frontend testing strategy tailored for a high-traffic e-commerce platform. Used Jest for unit testing key business logic, with Vitest, and Playwright for automated end-to-end flows (login, checkout, search). Achieved 85%+ test coverage and cut production issues by 40%.
+            Developed and executed a robust frontend testing strategy tailored
+            for a high-traffic e-commerce platform. Used Jest for unit testing
+            key business logic, with Vitest, and Playwright for automated
+            end-to-end flows (login, checkout, search). Achieved 85%+ test
+            coverage and cut production issues by 40%.
           </>,
           <>
-            Utilized web and data analytics tools including Google Analytics, Mixpanel, and Sentry to systematically track user behavior, feature adoption, and overall stabilization metrics. Improved user experience and guided performance adjustments, resulting in a 25% increase in conversion rate and a 15% reduction in bounce rate. Used Sentry to proactively resolve runtime issues, reducing frontend error rates by 35%.
+            Utilized web and data analytics tools including Google Analytics,
+            Mixpanel, and Sentry to systematically track user behavior, feature
+            adoption, and overall stabilization metrics. Improved user
+            experience and guided performance adjustments, resulting in a 25%
+            increase in conversion rate and a 15% reduction in bounce rate. Used
+            Sentry to proactively resolve runtime issues, reducing frontend
+            error rates by 35%.
           </>,
           <>
-            Designed and built a modular, reusable UI component library using Tailwind CSS and shadcn/ui, ensuring consistency, scalability, and fast iteration. Worked closely with designers to deliver pixel-perfect interfaces and cohesive user experience.
+            Designed and built a modular, reusable UI component library using
+            Tailwind CSS and shadcn/ui, ensuring consistency, scalability, and
+            fast iteration. Worked closely with designers to deliver
+            pixel-perfect interfaces and cohesive user experience.
           </>,
           <>
-            Supported responsive design by implementing adaptive layouts and touch-friendly components to fit all screen sizes, resulting in a 22% increase in mobile conversion. Added accessibility enhancements such as semantic HTML, ARIA roles, and keyboard navigation to improve usability and meet WCAG 2.1 guidelines.
+            Supported responsive design by implementing adaptive layouts and
+            touch-friendly components to fit all screen sizes, resulting in a
+            22% increase in mobile conversion. Added accessibility enhancements
+            such as semantic HTML, ARIA roles, and keyboard navigation to
+            improve usability and meet WCAG 2.1 guidelines.
           </>,
           <>
-            Collaborated with product managers and backend engineers to define clear, actionable development goals and streamline communication. Utilized Jira and Confluence to track progress and align API implementation with business priorities and frontend needs, ensuring well-timed scope and deliverables and strict deadlines.
+            Collaborated with product managers and backend engineers to define
+            clear, actionable development goals and streamline communication.
+            Utilized Jira and Confluence to track progress and align API
+            implementation with business priorities and frontend needs, ensuring
+            well-timed scope and deliverables and strict deadlines.
           </>,
           <>
-            Acted as frontend tech lead, leading a 3-person team in an agile environment, overseeing end-to-end frontend design, sprint-based feature delivery, and ongoing performance optimization. Drove key architectural decisions aligned with agile principles, implemented scalable engineering solutions (hydration optimization, lazy loading, route-based code splitting), and enforced code quality via ESLint and Prettier. Documented architecture decisions and coding standards; promoted team alignment and code quality through pair programming and shared learning.
+            Acted as frontend tech lead, leading a 3-person team in an agile
+            environment, overseeing end-to-end frontend design, sprint-based
+            feature delivery, and ongoing performance optimization. Drove key
+            architectural decisions aligned with agile principles, implemented
+            scalable engineering solutions (hydration optimization, lazy
+            loading, route-based code splitting), and enforced code quality via
+            ESLint and Prettier. Documented architecture decisions and coding
+            standards; promoted team alignment and code quality through pair
+            programming and shared learning.
           </>,
         ],
         logo: {
@@ -144,13 +187,22 @@ const about = {
         role: "Software Engineer",
         achievements: [
           <>
-            Independently designed and developed a cross-platform mobile app (CFREE Real Estate Exam Prep) for real estate professionals using React Native and Expo. Released to Google Play and the App Store, achieving 100+ users and positive feedback for usability and practical value.
+            Independently designed and developed a cross-platform mobile app
+            (CFREE Real Estate Exam Prep) for real estate professionals using
+            React Native and Expo. Released to Google Play and the App Store,
+            achieving 100+ users and positive feedback for usability and
+            practical value.
           </>,
           <>
-            Developed high-performance UI components using UI Kitten 5, applying custom theming and responsive layout techniques to support consistent UX across devices.
+            Developed high-performance UI components using UI Kitten 5, applying
+            custom theming and responsive layout techniques to support
+            consistent UX across devices.
           </>,
           <>
-            Implemented key mobile features including In-App Purchases, Push Notifications, and Firebase Authentication, enabling secure user engagement and subscription-based access using React Navigation and local state management with AsyncStorage.
+            Implemented key mobile features including In-App Purchases, Push
+            Notifications, and Firebase Authentication, enabling secure user
+            engagement and subscription-based access using React Navigation and
+            local state management with AsyncStorage.
           </>,
         ],
         logo: {
@@ -164,10 +216,15 @@ const about = {
         role: "Software Engineer",
         achievements: [
           <>
-            Built a responsive, single-page marketing dashboard using React.js, Redux, and Material UI. Enhanced mobile usability and reduced page load time to optimize component rendering.
+            Built a responsive, single-page marketing dashboard using React.js,
+            Redux, and Material UI. Enhanced mobile usability and reduced page
+            load time to optimize component rendering.
           </>,
           <>
-            Deployed the application and Node.js-based API server on Heroku with automated deployment pipelines. Configured environment variables and logging strategies to support staging and production workflows and facilitate easier debugging and release cycles.
+            Deployed the application and Node.js-based API server on Heroku with
+            automated deployment pipelines. Configured environment variables and
+            logging strategies to support staging and production workflows and
+            facilitate easier debugging and release cycles.
           </>,
         ],
         logo: {
@@ -211,9 +268,7 @@ const about = {
       {
         title: "Frameworks & Libraries",
         description: (
-          <>
-            React.js, Vue.js, Angular, React Native, Redux, Next.js
-          </>
+          <>React.js, Vue.js, Angular, React Native, Redux, Next.js</>
         ),
         images: [],
       },
@@ -221,7 +276,8 @@ const about = {
         title: "Tools & Others",
         description: (
           <>
-            Express, RESTful APIs, Jest, Tailwind CSS, Mixpanel, Google Analytics 4, Sentry, Playwright
+            Express, RESTful APIs, Jest, Tailwind CSS, Mixpanel, Google
+            Analytics 4, Sentry, Playwright
           </>
         ),
         images: [],
@@ -236,8 +292,8 @@ const blog = {
   description: `Read what ${person.name} has been up to recently`,
 };
 
-const work = {
-  label: "Work",
+const project = {
+  label: "Project",
   title: "My projects",
   description: `Software engineering projects by ${person.name}`,
 };
@@ -250,24 +306,24 @@ const gallery = {
     {
       src: "/images/gallery/img1.jpg",
       alt: "Architecture design showcase",
-      orientation: "horizontal"
+      orientation: "horizontal",
     },
     {
       src: "/images/gallery/img2.jpg",
       alt: "Modern UI components",
-      orientation: "vertical"
+      orientation: "vertical",
     },
     {
       src: "/images/gallery/img3.jpg",
       alt: "Web development project",
-      orientation: "horizontal"
+      orientation: "horizontal",
     },
     {
       src: "/images/gallery/img4.jpg",
       alt: "Mobile responsive design",
-      orientation: "vertical"
-    }
-  ]
+      orientation: "vertical",
+    },
+  ],
 };
 
 const articles = {
@@ -282,7 +338,7 @@ const articles = {
       description:
         "Learn how to architect large-scale React applications with best practices for state management, component organization, and performance optimization. This article covers advanced patterns and techniques for building maintainable React codebases.",
       date: "May 15, 2024",
-      image: "/images/articles/img1.jpg",
+      image: "https://picsum.photos/seed/react-scalable/720/480",
       link: "/articles/0",
       tags: ["React", "Architecture", "Performance"],
     },
@@ -292,7 +348,7 @@ const articles = {
       description:
         "A comprehensive guide to designing a scalable star rating widget system. Learn about component architecture, state management, API design, and how to handle edge cases in a distributed environment.",
       date: "April 29, 2024",
-      image: "/images/articles/img2.jpg",
+      image: "https://picsum.photos/seed/system-design-widget/720/480",
       link: "/articles/1",
       tags: ["System Design", "Architecture"],
     },
@@ -302,7 +358,7 @@ const articles = {
       description:
         "A comprehensive collection of behavioral interview questions that are commonly asked in technical interviews. Learn how to prepare for these questions and answer them confidently with the STAR method.",
       date: "May 1, 2024",
-      image: "/images/articles/img3.jpg",
+      image: "https://picsum.photos/seed/interview-behavioral/720/480",
       link: "/articles/2",
       tags: ["Behavioral Interview", "Frontend Interview"],
     },
@@ -312,7 +368,7 @@ const articles = {
       description:
         "A complete guide to becoming a frontend developer in 2024. This roadmap covers HTML/CSS fundamentals, JavaScript ES6+, React ecosystem, build tools, testing, and modern deployment strategies. Perfect for beginners and developers looking to update their skills.",
       date: "March 20, 2024",
-      image: "/images/articles/img4.jpg",
+      image: "https://picsum.photos/seed/frontend-roadmap-2024/720/480",
       link: "/articles/3",
       tags: ["Frontend", "Learning Path", "Career"],
     },
@@ -322,7 +378,7 @@ const articles = {
       description:
         "Master React Hooks with this comprehensive guide covering useState, useEffect, useContext, and how to create powerful custom hooks. Learn common patterns, best practices, and performance optimization techniques.",
       date: "March 15, 2024",
-      image: "/images/articles/img-01.jpg",
+      image: "https://picsum.photos/seed/react-hooks-deep/720/480",
       link: "/articles/4",
       tags: ["React", "Hooks", "JavaScript"],
     },
@@ -332,7 +388,7 @@ const articles = {
       description:
         "Complete guide to acing frontend technical interviews. Covers JavaScript fundamentals, React concepts, algorithm questions, system design basics, and hands-on coding challenges with real examples and solutions.",
       date: "February 28, 2024",
-      image: "/images/articles/img-02.jpg",
+      image: "https://picsum.photos/seed/technical-interview-prep/720/480",
       link: "/articles/5",
       tags: ["Technical Interview", "Frontend", "JavaScript"],
     },
@@ -342,7 +398,7 @@ const articles = {
       description:
         "Learn system design concepts specifically for frontend engineers. Covers CDN strategy, caching mechanisms, micro-frontend architecture, performance monitoring, and scalable component design patterns.",
       date: "February 20, 2024",
-      image: "/images/articles/img-03.jpg",
+      image: "https://picsum.photos/seed/frontend-system-design/720/480",
       link: "/articles/6",
       tags: ["System Design", "Frontend Architecture", "Performance"],
     },
@@ -352,7 +408,7 @@ const articles = {
       description:
         "Real-world experience migrating a large-scale application from Vue 2 to React. Learn about component mapping, state management migration, routing differences, and strategies to minimize downtime during the transition.",
       date: "February 10, 2024",
-      image: "/images/articles/img-08.jpg",
+      image: "https://picsum.photos/seed/vue-react-migration/720/480",
       link: "/articles/7",
       tags: ["React", "Vue", "Migration", "Architecture"],
     },
@@ -362,7 +418,7 @@ const articles = {
       description:
         "Master modern CSS with Grid and Flexbox layouts. Learn how to build responsive designs, implement component-first methodologies, and optimize CSS for performance in large applications.",
       date: "January 25, 2024",
-      image: "/images/articles/img-09.jpg",
+      image: "https://picsum.photos/seed/modern-css-grid/720/480",
       link: "/articles/8",
       tags: ["CSS", "Frontend", "Responsive Design"],
     },
@@ -372,7 +428,7 @@ const articles = {
       description:
         "Deep dive into JavaScript performance optimization. Covers memory management, event loop understanding, code splitting, lazy loading, and profiling techniques to build faster web applications.",
       date: "January 15, 2024",
-      image: "/images/articles/img-14.jpg",
+      image: "https://picsum.photos/seed/javascript-performance/720/480",
       link: "/articles/9",
       tags: ["JavaScript", "Performance", "Optimization"],
     },
@@ -382,7 +438,7 @@ const articles = {
       description:
         "Step-by-step guide to creating a scalable component library. Learn about design systems, component API design, documentation with Storybook, testing strategies, and publishing to npm.",
       date: "December 20, 2023",
-      image: "/images/articles/img1.jpg",
+      image: "https://picsum.photos/seed/component-library-storybook/720/480",
       link: "/articles/10",
       tags: ["React", "Component Library", "Storybook"],
     },
@@ -392,7 +448,7 @@ const articles = {
       description:
         "Comprehensive guide to Next.js performance optimization. Covers Server-Side Rendering, Static Site Generation, Image optimization, Core Web Vitals improvement, and deployment best practices.",
       date: "December 10, 2023",
-      image: "/images/articles/img2.jpg",
+      image: "https://picsum.photos/seed/nextjs-performance/720/480",
       link: "/articles/11",
       tags: ["Next.js", "Performance", "SSR", "SSG"],
     },
@@ -406,8 +462,7 @@ export {
   home,
   about,
   blog,
-  work,
+  project,
   gallery,
   articles,
 };
-

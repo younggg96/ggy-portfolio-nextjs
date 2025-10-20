@@ -1,0 +1,125 @@
+---
+title: "PaperGen.ai — AI Writing & Content Platform"
+publishedAt: "2025-10-20"
+summary: "Built a full-stack AI content generation SaaS with a decoupled hybrid architecture featuring Next.js 14, FastAPI, and AWS Lambda for orchestrating multi-model AI workflows."
+images:
+  - "/images/projects/project-02/cover-01.jpg"
+  - "/images/projects/project-02/cover-02.jpg"
+team:
+  - name: "Guanggeng Yang"
+    role: "Senior Software Engineer"
+    avatar: "/images/avatar.png"
+    linkedIn: "https://www.linkedin.com/in/guanggengyang/"
+link: "https://papergen.ai"
+---
+
+## Overview
+
+PaperGen.ai is a sophisticated full-stack AI content generation SaaS platform that empowers users to create high-quality written content through advanced AI workflows. The platform features a decoupled hybrid architecture combining Next.js 14 for the web tier, FastAPI with Prisma for API and data services, and AWS Lambda for asynchronous AI processing pipelines, all orchestrated through Infrastructure as Code using Terraform.
+
+## Key Features
+
+- **Decoupled Hybrid Architecture**: Designed a scalable three-tier architecture separating concerns between web presentation (Next.js), API/data services (FastAPI + Prisma), and asynchronous processing (AWS Lambda).
+- **Multi-Stage AI Workflows**: Orchestrated complex multi-model AI pipelines on AWS Lambda to generate content through distinct stages: draft → polish → humanize → reference generation.
+- **Supabase BaaS Integration**: Leveraged Supabase as a Backend-as-a-Service layer for user authentication, real-time data synchronization, and event streaming.
+- **Infrastructure as Code**: Implemented complete infrastructure provisioning and management using Terraform for reproducible, version-controlled deployments.
+- **Fault-Tolerant Processing**: Built resilient asynchronous pipelines with proper error handling, retry mechanisms, and concurrent processing for improved throughput.
+- **Multi-Model AI Integration**: Integrated multiple AI models to leverage different strengths for drafting, polishing, humanization, and reference generation.
+
+## Technologies Used
+
+- **Frontend**: Next.js 14, React, TypeScript, Tailwind CSS
+- **Backend API**: FastAPI, Python, Prisma ORM
+- **Database**: PostgreSQL (via Supabase)
+- **Authentication**: Supabase Auth
+- **Serverless Computing**: AWS Lambda, AWS API Gateway
+- **Infrastructure**: Terraform, AWS CloudFormation
+- **AI/ML**: OpenAI GPT-4, Claude, Custom fine-tuned models
+- **Real-time**: Supabase Realtime, WebSockets
+
+## Architecture Highlights
+
+### Decoupled Three-Tier Design
+
+The platform follows a clean separation of concerns:
+
+**Web Tier (Next.js 14)**
+
+- Server-side rendering for SEO and initial page loads
+- Client-side interactivity for rich user experiences
+- Optimized bundle size and code splitting
+- API route handlers for lightweight backend operations
+
+**API & Data Tier (FastAPI + Prisma)**
+
+- High-performance RESTful API with automatic OpenAPI documentation
+- Type-safe database operations with Prisma ORM
+- Complex business logic and data validation
+- PostgreSQL for relational data with ACID compliance
+
+**Serverless Processing Tier (AWS Lambda)**
+
+- Event-driven architecture for AI content generation
+- Concurrent execution for parallel processing
+- Auto-scaling based on demand
+- Cost-effective pay-per-use model
+
+### Multi-Stage AI Lifecycle
+
+Implemented a sophisticated content generation pipeline with four distinct stages:
+
+1. **Draft Stage**: Initial content generation using GPT-4 based on user prompts
+2. **Polish Stage**: Refinement of structure, grammar, and coherence
+3. **Humanize Stage**: Adding natural voice, reducing AI detection markers
+4. **Reference Stage**: Automatic citation and source generation
+
+Each stage is orchestrated as a separate Lambda function with proper error handling and retry logic, ensuring fault tolerance and reliability.
+
+### Supabase Integration
+
+Utilized Supabase as a comprehensive BaaS solution:
+
+- **Authentication**: User management with email/password and OAuth providers
+- **Real-time Database**: Live updates for content generation progress
+- **Row Level Security**: Tenant isolation and data access policies
+- **Event Streams**: Real-time notifications for pipeline completion
+
+### Infrastructure as Code with Terraform
+
+All infrastructure is provisioned and managed through Terraform:
+
+- AWS Lambda functions with proper IAM roles and policies
+- API Gateway configuration for RESTful endpoints
+- PostgreSQL RDS instances with automated backups
+- CloudWatch logging and monitoring
+- VPC networking and security groups
+- S3 buckets for static assets and generated content
+
+## Challenges and Learnings
+
+Building a decoupled architecture required careful consideration of API contracts and data flow between tiers. One major challenge was handling long-running AI workflows while providing real-time feedback to users. This was solved by implementing a WebSocket connection through Supabase Realtime, allowing users to receive progress updates as each stage completes.
+
+Another challenge was optimizing Lambda cold starts for the AI pipelines. This was addressed by implementing Lambda warm-up strategies, connection pooling for database access, and lazy loading of ML models.
+
+Orchestrating multi-model workflows required implementing sophisticated error handling and retry mechanisms. If one stage fails, the system can retry with different parameters or fall back to alternative models, ensuring high success rates even when individual services experience issues.
+
+## Outcome
+
+PaperGen.ai successfully launched as a production AI content platform with impressive performance metrics:
+
+- **Fast content generation**: Average complete workflow time of 45 seconds
+- **High success rate**: 98% successful content generation rate
+- **Scalable architecture**: Handles 1000+ concurrent content generation jobs
+- **Cost-effective**: 60% reduction in infrastructure costs vs. traditional server approach
+- **Reliable processing**: Fault-tolerant pipeline with automatic retries
+
+The platform demonstrates advanced expertise in building complex, decoupled architectures, orchestrating AI workflows at scale, and leveraging modern serverless technologies for cost-effective, high-performance applications.
+
+The project showcases skills in:
+
+- Full-stack development with modern frameworks
+- Microservices and serverless architecture
+- AI/ML integration and workflow orchestration
+- Infrastructure as Code and DevOps practices
+- Real-time data synchronization
+- Scalable SaaS platform design

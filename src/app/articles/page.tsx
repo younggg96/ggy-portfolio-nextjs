@@ -34,7 +34,7 @@ export default function Articles() {
                     alt={article.title}
                     width={360}
                     height={240}
-                    className="object-cover transition-transform duration-300 group-hover:scale-105"
+                    className="object-cover w-full h-[240px] transition-transform duration-300 group-hover:scale-105"
                   />
                 </div>
                 <div className="s-flex-show">

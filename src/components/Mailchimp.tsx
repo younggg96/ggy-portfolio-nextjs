@@ -44,10 +44,8 @@ export const Mailchimp = ({ newsletter }: MailchimpProps) => {
 
   const handleResumeClick = (e: React.MouseEvent) => {
     e.preventDefault();
-    // TODO: Add resume download logic
-    // https://drive.google.com/file/d/12ZCxWFK9ZlPVvr2YyOzAFCquCFDaVmfw/view?usp=sharing
     window.open(
-      "https://drive.google.com/file/d/1LQ12Pq9m5gTe2UajrtYseGy1P92jPynD/view?usp=sharing",
+      "https://drive.google.com/file/d/1OlcfFIZe8RgxRk9zQIPBah1ATPXefapg/view?usp=sharing",
       "_blank"
     );
   };
@@ -133,7 +131,12 @@ export const Mailchimp = ({ newsletter }: MailchimpProps) => {
         {newsletter.description}
       </Text>
       <Flex fillWidth maxWidth={24} gap="16" mobileDirection="column">
-        <Button onClick={handleEmailClick} size="m" prefixIcon="email" fillWidth>
+        <Button
+          onClick={handleEmailClick}
+          size="m"
+          prefixIcon="email"
+          fillWidth
+        >
           Send Message
         </Button>
         <Button

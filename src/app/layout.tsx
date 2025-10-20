@@ -5,7 +5,7 @@ import { Analytics } from "@vercel/analytics/react";
 
 import classNames from "classnames";
 
-import { Footer, Header, RouteGuard } from "@/components";
+import { Footer, Header } from "@/components";
 import { baseURL, effects, style } from "@/app/resources";
 
 import { Inter } from "next/font/google";
@@ -175,7 +175,7 @@ export default async function RootLayout({ children }: RootLayoutProps) {
               flex={1}
             >
               <Flex horizontal="center" fillWidth minHeight="0">
-                <RouteGuard>{children}</RouteGuard>
+                {children}
               </Flex>
             </Flex>
             <Footer />

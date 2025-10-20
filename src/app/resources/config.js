@@ -3,16 +3,10 @@ const baseURL = "https://ggy-portfolio-nextjs.vercel.app";
 const routes = {
   "/": true,
   "/about": true,
-  // "/work": true,
+  "/project": true,
   // "/blog": true,
   // "/gallery": true,
   "/articles": true,
-};
-
-// Enable password protection on selected routes
-// Set password in the .env file, refer to .env.example
-const protectedRoutes = {
-  "/work/automate-design-handovers-with-a-figma-to-code-pipeline": false,
 };
 
 const style = {
@@ -107,4 +101,4 @@ const mailchimp = {
   },
 };
 
-export { routes, protectedRoutes, effects, style, display, mailchimp, baseURL };
+export { routes, effects, style, display, mailchimp, baseURL };

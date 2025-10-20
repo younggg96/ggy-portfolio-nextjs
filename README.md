@@ -34,16 +34,19 @@ This is my personal portfolio website built with Next.js, Tailwind CSS, and Once
 ## **Local Development**
 
 1. Clone the repository
+
 ```bash
 git clone https://github.com/younggeng/ggy-portfolio-nextjs.git
 ```
 
 2. Install dependencies
+
 ```bash
 npm install
 ```
 
 3. Start the development server
+
 ```bash
 npm run dev
 ```
@@ -53,7 +56,7 @@ npm run dev
 ## **Content Management**
 
 - Blog posts: Add `.mdx` files to `src/app/blog/posts`
-- Projects: Add `.mdx` files to `src/app/work/projects`
+- Projects: Add `.mdx` files to `src/app/project/projects`
 - Main content: Edit `src/app/resources/content.js`
 - Site config: Edit `src/app/resources/config.js`
 
@@ -73,6 +76,7 @@ The site is automatically deployed to Vercel with each push to the main branch.
 ## **License**
 
 This project is based on Once UI's Magic Portfolio template, which is distributed under the CC BY-NC 4.0 License.
+
 - Commercial usage is not allowed
 - Attribution is required
 

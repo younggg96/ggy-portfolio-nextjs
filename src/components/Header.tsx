@@ -4,14 +4,25 @@ import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import { Fade, Flex, Line, ToggleButton } from "@/once-ui/components";
 import { routes, display } from "@/app/resources";
-import { person, home, about, blog, work, gallery, articles } from "@/app/resources/content";
+import {
+  person,
+  home,
+  about,
+  blog,
+  project,
+  gallery,
+  articles,
+} from "@/app/resources/content";
 
 type TimeDisplayProps = {
   timeZone: string;
   locale?: string;
 };
 
-const TimeDisplay: React.FC<TimeDisplayProps> = ({ timeZone, locale = "en-GB" }) => {
+const TimeDisplay: React.FC<TimeDisplayProps> = ({
+  timeZone,
+  locale = "en-GB",
+}) => {
   const [currentTime, setCurrentTime] = useState("");
 
   useEffect(() => {
@@ -47,7 +58,15 @@ export const Header = () => {
       <Fade hide="s" fillWidth position="fixed" height="80" zIndex={9}>
         <div className="absolute inset-0 bg-gradient-to-b from-page-background to-transparent backdrop-blur-sm pointer-events-none" />
       </Fade>
-      <Fade show="s" fillWidth position="fixed" bottom="0" to="top" height="80" zIndex={9}>
+      <Fade
+        show="s"
+        fillWidth
+        position="fixed"
+        bottom="0"
+        to="top"
+        height="80"
+        zIndex={9}
+      >
         <div className="absolute inset-0 bg-gradient-to-t from-page-background to-transparent backdrop-blur-sm pointer-events-none" />
       </Fade>
       <Flex
@@ -69,7 +88,11 @@ export const Header = () => {
           >
             <Flex gap="4" vertical="center" textVariant="body-default-s">
               {routes["/"] && (
-                <ToggleButton prefixIcon="home" href="/" selected={pathname === "/"} />
+                <ToggleButton
+                  prefixIcon="home"
+                  href="/"
+                  selected={pathname === "/"}
+                />
               )}
               <Line vert maxHeight="24" />
               {routes["/about"] && (
@@ -89,24 +112,24 @@ export const Header = () => {
                   />
                 </>
               )}
-              {/* {routes["/work"] && (
+              {routes["/project"] && (
                 <>
                   <ToggleButton
                     className="s-flex-hide"
                     prefixIcon="grid"
-                    href="/work"
-                    label={work.label}
-                    selected={pathname.startsWith("/work")}
+                    href="/project"
+                    label={project.label}
+                    selected={pathname.startsWith("/project")}
                   />
                   <ToggleButton
                     className="s-flex-show"
                     prefixIcon="grid"
-                    href="/work"
-                    selected={pathname.startsWith("/work")}
+                    href="/project"
+                    selected={pathname.startsWith("/project")}
                   />
                 </>
               )}
-              {routes["/blog"] && (
+              {/* {routes["/blog"] && (
                 <>
                   <ToggleButton
                     className="s-flex-hide"
@@ -122,8 +145,8 @@ export const Header = () => {
                     selected={pathname.startsWith("/blog")}
                   />
                 </>
-              )}
-              {routes["/gallery"] && (
+              )} */}
+              {/* {routes["/gallery"] && (
                 <>
                   <ToggleButton
                     className="s-flex-hide"

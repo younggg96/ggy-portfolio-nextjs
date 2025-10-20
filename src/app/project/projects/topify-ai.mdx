@@ -1,0 +1,80 @@
+---
+title: "Topify.ai — AI Visibility Analytics SaaS"
+publishedAt: "2025-10-15"
+summary: "Built a multi-tenant SaaS platform for marketing and growth teams to track brand and competitor visibility across LLMs like ChatGPT, Claude, and Perplexity."
+images:
+  - "/images/projects/project-01/cover-01.jpg"
+  - "/images/projects/project-01/cover-02.jpg"
+team:
+  - name: "Guanggeng Yang"
+    role: "Senior Software Engineer"
+    avatar: "/images/avatar.png"
+    linkedIn: "https://www.linkedin.com/in/guanggengyang/"
+link: "https://topify.ai"
+---
+
+## Overview
+
+Topify.ai is a cutting-edge multi-tenant SaaS platform designed for marketing and growth teams to track brand and competitor visibility across popular Large Language Models (LLMs) including ChatGPT, Claude, and Perplexity. The platform provides actionable insights into how brands are represented in AI-generated responses, enabling data-driven marketing strategies in the age of AI-powered search.
+
+## Key Features
+
+- **Multi-Tenant Architecture**: Built a scalable SaaS platform supporting multiple organizations with isolated data and customizable analytics dashboards.
+- **LLM Visibility Tracking**: Implemented real-time tracking and analytics for brand mentions across ChatGPT, Claude, and Perplexity, providing comprehensive visibility metrics.
+- **Hybrid Rendering Strategy**: Architected a high-performance Next.js 14 dashboard leveraging both React Server Components (RSC) for server-side performance and Client Components for interactive features.
+- **Modern UI Components**: Utilized shadcn/ui and Radix UI primitives to build accessible, responsive, and highly interactive interface components.
+- **Multi-Auth Federation**: Integrated NextAuth with AWS Cognito and Credentials providers, implementing JWT session callbacks with access, ID, and refresh tokens for secure authentication.
+- **Subscription Management**: Implemented full Stripe Checkout integration with webhook handlers for subscription lifecycle management, payment processing, and billing automation.
+
+## Technologies Used
+
+- **Frontend**: Next.js 14, React Server Components, TypeScript, shadcn/ui, Radix UI, Tailwind CSS
+- **Authentication**: NextAuth.js, AWS Cognito, JWT
+- **Payment Processing**: Stripe Checkout, Stripe Webhooks
+- **Database & State Management**: PostgreSQL, Prisma ORM
+- **Deployment**: Vercel, AWS
+
+## Architecture Highlights
+
+### Hybrid Rendering Strategy
+
+The application leverages Next.js 14's hybrid rendering capabilities to optimize performance:
+
+- **Server Components** for static content, data fetching, and SEO-critical pages
+- **Client Components** for interactive dashboards, real-time updates, and user interactions
+- **Streaming SSR** for improved Time to First Byte (TTFB) and progressive page loading
+
+### Multi-Auth Identity Federation
+
+Implemented a robust authentication system supporting multiple providers:
+
+- AWS Cognito for enterprise SSO integration
+- Credentials provider for email/password authentication
+- JWT session callbacks injecting access tokens, ID tokens, and refresh tokens
+- Role-based access control (RBAC) for multi-tenant isolation
+
+### Stripe Integration
+
+Built a complete subscription flow with:
+
+- Stripe Checkout for secure payment processing
+- Webhook handlers for real-time subscription events
+- Automated billing cycles and invoice management
+- Usage-based pricing tiers with feature gating
+
+## Challenges and Learnings
+
+One of the primary challenges was implementing true multi-tenancy while maintaining data isolation and performance. This required careful database schema design with tenant-scoped queries and implementing row-level security policies. Additionally, coordinating the complex authentication flow between NextAuth, AWS Cognito, and JWT token management required deep understanding of OAuth 2.0 and OIDC protocols.
+
+The Stripe webhook integration presented challenges around idempotency and handling race conditions during subscription state changes. Implementing proper error handling and retry mechanisms was crucial for reliability.
+
+## Outcome
+
+Topify.ai successfully launched as a production SaaS platform, providing marketing teams with unprecedented visibility into their brand's presence in AI-generated content. The platform's performance metrics include:
+
+- **Fast page loads**: Average LCP under 1.2s
+- **High availability**: 99.9% uptime
+- **Scalable architecture**: Supporting hundreds of concurrent users
+- **Secure payments**: Zero payment processing errors since launch
+
+The project demonstrates expertise in building modern, scalable SaaS applications with complex authentication, payment processing, and multi-tenant architecture.

@@ -1,12 +1,12 @@
 import { getPosts } from "@/app/utils/utils";
 import { Column } from "@/once-ui/components";
-import { Projects } from "@/components/work/Projects";
+import { Projects } from "@/components/project/Projects";
 import { baseURL } from "@/app/resources";
-import { person, work } from "@/app/resources/content";
+import { person, project } from "@/app/resources/content";
 
 export async function generateMetadata() {
-  const title = work.title;
-  const description = work.description;
+  const title = project.title;
+  const description = project.description;
   const ogImage = `https://${baseURL}/og?title=${encodeURIComponent(title)}`;
 
   return {
@@ -16,7 +16,7 @@ export async function generateMetadata() {
       title,
       description,
       type: "website",
-      url: `https://${baseURL}/work/`,
+      url: `https://${baseURL}/project/`,
       images: [
         {
           url: ogImage,
@@ -33,8 +33,8 @@ export async function generateMetadata() {
   };
 }
 
-export default function Work() {
-  let allProjects = getPosts(["src", "app", "work", "projects"]);
+export default function Project() {
+  let allProjects = getPosts(["src", "app", "project", "projects"]);
 
   return (
     <Column maxWidth="m">
@@ -45,8 +45,8 @@ export default function Work() {
           __html: JSON.stringify({
             "@context": "https://schema.org",
             "@type": "CollectionPage",
-            headline: work.title,
-            description: work.description,
+            headline: project.title,
+            description: project.description,
             url: `https://${baseURL}/projects`,
             image: `${baseURL}/og?title=Design%20Projects`,
             author: {

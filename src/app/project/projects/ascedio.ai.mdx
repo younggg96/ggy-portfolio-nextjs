@@ -1,0 +1,125 @@
+---
+title: "Ascendio AI — AI Stock Analysis Agent Platform"
+publishedAt: "2025-10-20"
+summary: "Built an AI-driven stock intelligence platform that aggregates market data, news, and social signals using LLM-based agents to generate actionable trading insights."
+images:
+  - "/images/projects/project-03/cover-01.jpg"
+  - "/images/projects/project-03/cover-01.jpg"
+team:
+  - name: "Guanggeng Yang"
+    role: "Senior Software Engineer"
+    avatar: "/images/avatar.png"
+    linkedIn: "https://www.linkedin.com/in/guanggengyang/"
+link: "https://ascendio-ai.com"
+---
+
+## Overview
+
+Ascendio.ai is an intelligent AI-powered stock analysis platform that combines real-time financial data, social sentiment, and AI reasoning to help investors make data-driven decisions.  
+The platform employs **autonomous LLM agents** that continuously monitor financial news, earnings reports, and social media signals, generating summarized insights, sentiment analysis, and potential trading signals in an easy-to-digest dashboard.
+
+Designed for both retail and institutional users, Ascendio.ai bridges the gap between traditional market analytics and next-generation AI-driven intelligence.
+
+---
+
+## Key Features
+
+- **AI-Powered Analysis Agents**:  
+  Deployed FinGPT and custom LLM pipelines that read, summarize, and rate news, SEC filings, and Twitter/Reddit discussions to determine real-time sentiment per stock.
+
+- **Multi-Source Data Aggregation**:  
+  Integrated APIs from MarketPro.ai, Alpha Vantage, and NewsAPI to unify price data, company fundamentals, and sentiment scores into one cohesive dashboard.
+
+- **Agent-Orchestrated Insights**:  
+  Designed a multi-agent system where one agent fetches live data, another interprets trends, and a final “Decision Agent” synthesizes trading-grade insights with confidence levels.
+
+- **Real-Time Visualization Dashboard**:  
+  Built an interactive Next.js 14 interface for visualizing price charts, social sentiment timelines, and AI-generated summaries with Tailwind + shadcn/ui.
+
+- **User Personalization & Watchlists**:  
+  Implemented dynamic portfolios and personalized watchlists, where each user’s agent adapts to preferred tickers, sectors, and risk profiles.
+
+- **Secure Authentication & Access Control**:  
+  Added NextAuth.js with AWS Cognito federation, JWT session callbacks, and tenant-level RBAC for enterprise users.
+
+---
+
+## Technologies Used
+
+- **Frontend**: Next.js 14, React Server Components, TypeScript, Tailwind CSS, shadcn/ui, Recharts
+- **AI & Data**: OpenAI GPT-4, FinGPT, HuggingFace Transformers, MarketPro/Alpha Vantage APIs
+- **Authentication**: NextAuth.js, AWS Cognito, JWT
+- **Backend & Storage**: PostgreSQL + Prisma ORM, Redis for caching real-time data
+- **Deployment**: Vercel (frontend) + AWS Lambda (API), Cloudflare CDN
+- **DevOps**: GitHub Actions CI/CD, Serverless Framework
+
+---
+
+## Architecture Highlights
+
+### 1. Multi-Agent Orchestration
+
+The platform uses an **LLM-Agent-based pipeline** where agents specialize in different tasks:
+
+- **Data Agent** → Gathers market + news data
+- **Sentiment Agent** → Performs NLP classification using fine-tuned FinBERT
+- **Decision Agent** → Generates trading signals and human-readable summaries
+- **Feedback Agent** → Learns from user interactions to refine scoring weights
+
+This modular design allows plug-and-play upgrades for each agent type (e.g., FinGPT → Claude 3 Sonnet).
+
+---
+
+### 2. Hybrid Rendering & Performance
+
+- **Server Components (RSC)** for data-intensive analytics and SEO pages
+- **Client Components** for user dashboards, filters, and live data streams
+- **Edge Caching** and **ISR (Incremental Static Regeneration)** for near-real-time updates
+
+The result is an ultra-fast, interactive experience with sub-second TTFB and smooth client hydration.
+
+---
+
+### 3. Secure Multi-Tenant Architecture
+
+Ascendio.ai supports enterprise teams through isolated data environments:
+
+- Tenant-scoped database schemas with Prisma + Row-Level Security (RLS)
+- Role-Based Access Control (RBAC) for admin, analyst, and viewer roles
+- Encrypted JWT sessions with Cognito tokens (access, ID, refresh)
+
+---
+
+## Challenges and Learnings
+
+- **Sentiment Data Quality**:  
+  Social media signals are noisy and inconsistent; solving this required building a weighted scoring system combining multiple data sources (Reddit, X, and news).
+
+- **Real-Time Streaming**:  
+  Maintaining live updates while minimizing API costs led to a hybrid polling + WebSocket architecture using Redis Pub/Sub.
+
+- **Model Interpretability**:  
+  Users needed transparency in AI-generated insights, so explainability layers (SHAP-like feature attributions and confidence meters) were added.
+
+- **Authentication Complexity**:  
+  Integrating NextAuth.js, Cognito, and JWT session rotation across tenants demanded custom session callbacks and encryption management.
+
+---
+
+## Outcome
+
+Ascendio.ai successfully launched its **beta program** with over 1,000 registered users and several pilot institutional clients.  
+The system delivers **AI-driven market intelligence** with measurable results:
+
+- **Accuracy**: 82% average alignment between AI sentiment and next-day stock movement
+- **Performance**: Average LCP < 1.3 s, API latency < 200 ms
+- **Scalability**: Multi-tenant architecture supports 1000+ concurrent sessions
+- **Uptime**: 99.9% availability via Vercel + AWS Edge stack
+
+Ascendio.ai represents a new generation of AI-powered financial analysis tools, demonstrating how multi-agent LLM systems can augment human decision-making in complex, real-time environments. The platform showcases advanced skills in:
+
+- AI/ML engineering with multi-agent orchestration
+- Real-time data processing and streaming architectures
+- Financial technology integration and compliance
+- Full-stack SaaS platform development with Next.js 14
+- Enterprise-grade authentication and security patterns
