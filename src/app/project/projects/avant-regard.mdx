@@ -1,0 +1,68 @@
+---
+title: "Avant Regard — Fashion Community, Archive & Resale"
+publishedAt: "2026-08-25"
+summary: "Independently built an avant-garde fashion platform for community, runway archives, boutique discovery, and authenticated resale — iOS/Android plus a full Next.js web product on one FastAPI backend."
+images:
+  - "/images/projects/avant-regard/cover-01.jpg"
+  - "/images/projects/avant-regard/cover-02.jpg"
+team:
+  - name: "Guanggeng Yang"
+    role: "Full-stack Engineer"
+    avatar: "/images/avatar.png"
+    linkedIn: "https://www.linkedin.com/in/guanggengyang/"
+link: "https://avantregard.com"
+---
+
+## Overview
+
+Avant Regard is an independent avant-garde fashion product: a community for outfits and discussion, a designer and runway archive, a global map of archive boutiques, and a C2C marketplace for authenticated archive pieces. It ships as an iOS and Android app and as a full web product, both on the same FastAPI backend.
+
+The archive catalogs 200+ designers and 9,000+ runway collections. Collectors and boutiques can list pieces, negotiate, and complete orders; each person also keeps a personal collection ledger that can become a digital passport and be relisted in one tap.
+
+## What each part is for
+
+- **Discover / forum**: Outfits, reviews, and everyday posts, with follows, comments, and direct messages.
+- **Archive**: Designer brands and runway records — the product documents 200+ designers and 9,000+ shows.
+- **Boutiques / Atlas**: A directory and interactive map of independent archive boutiques worldwide.
+- **Marketplace**: Collectors and boutiques list archive pieces, make offers, and place orders.
+- **Personal Archive**: A private ledger of owned pieces, with a digital passport and one-tap relist.
+- **Merchants**: Boutique onboarding, catalog, categories, and a store dashboard.
+- **Plus / levels**: A subscription that lowers commission and unlocks archive analytics, plus creator titles and ranks.
+
+## Key Features
+
+- **Three clients, one API**: React Native (Expo) for iOS and Android, Next.js 14 for web, and FastAPI with PostgreSQL/Supabase for the API. The web product grew from a landing page into Discover, Archive, Marketplace, Atlas, a merchant dashboard, and an admin console, all on the same REST API as the app.
+- **Dual-region release**: Separate CN and NA app variants, bilingual EN/ZH, Alipay and WeChat Pay in China, and Stripe (including Connect and Identity) overseas. iOS builds ship through EAS to the App Store.
+- **C2C marketplace**: Listings, offers, escrow-style orders, wallet and ledger settlement, KYC, payouts, after-sales disputes, and paid expert authentication reports that attach to a listing.
+- **Digital passport**: A personal piece ledger with ownership matching and one-tap relist. AI generates front, side, and back views from a single photo. Archive pieces can take likes and comments without entering the Discover feed.
+- **Monorepo scale**: Expo, Next.js App Router, and FastAPI/Postgres in one repo — about 100 mobile screens, about 90 web routes, and 100+ database migrations covering feed, chat, merchant operations, and admin moderation.
+
+## Technologies Used
+
+- **Mobile**: React Native, Expo, TypeScript, EAS
+- **Web**: Next.js 14, App Router, TypeScript
+- **API**: FastAPI, PostgreSQL, Supabase, Redis, Docker
+- **Payments & identity**: Stripe, Stripe Connect, Stripe Identity, Alipay, WeChat Pay
+- **Product**: i18n (EN/ZH), AI image generation
+
+## Architecture Highlights
+
+### Shared backend
+
+App and web do not keep separate data models. Both call one REST API, so a listing, passport, boutique pin, or forum thread is the same record on every client. That is what let the site expand from a marketing page into the full product without a second backend.
+
+### Region split without a second product
+
+China and North America are variants of the same app: language, store listing, and payment provider change, the product does not. China uses Alipay and WeChat Pay. Overseas checkout uses Stripe, with Connect for seller payouts and Identity for KYC.
+
+### Marketplace as a ledger
+
+A sale is not a single checkout call. Listing, offer, order, wallet entries, payout, dispute, and the optional authentication report are separate states on one piece. The personal archive is the source of ownership: a piece is filed once, then relisted into the marketplace instead of being re-entered.
+
+### Feed isolation
+
+Archive pieces participate in likes and comments, but those interactions stay off the Discover feed. Community posts and catalog records share engagement primitives without mixing the two timelines.
+
+## Outcome
+
+Avant Regard is a shipped independent product: iOS and Android through EAS, and a public web app at [avantregard.com](https://avantregard.com). The monorepo covers the community, the archive, the boutique map, merchant and admin tools, and the resale loop — from a photo and a passport through offer, escrow, authentication, and payout.

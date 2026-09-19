@@ -6,7 +6,7 @@ const person = {
   get name() {
     return `${this.firstName} ${this.lastName}`;
   },
-  role: "Senior Software Engineer",
+  role: "Senior Staff Software Engineer",
   avatar: "/images/avatar.png",
   location: "America/Los_Angeles",
   displayLocation: "Fremont, CA",
@@ -52,12 +52,12 @@ const home = {
   label: "Home",
   title: `${person.name}'s Portfolio`,
   description: `Portfolio website showcasing my work as a ${person.role}`,
-  headline: <>Senior Software Engineer & Full-Stack Developer</>,
+  headline: <>Senior Staff Software Engineer</>,
   subline: (
     <>
-      I'm Guanggeng, a Senior Software Engineer at{" "}
-      <InlineCode>Vibrant Wellness</InlineCode>, leading end-to-end
-      rearchitecture of medical e-commerce platforms.
+      I'm Guanggeng, a Senior Staff Software Engineer at{" "}
+      <InlineCode>Palo Alto Networks</InlineCode>, based on-site in Santa
+      Clara.
       <br /> I specialize in migrating legacy systems to modern architectures,
       <br /> optimizing performance, and leading frontend teams to deliver
       scalable solutions.
@@ -85,13 +85,13 @@ const about = {
     title: "Introduction",
     description: (
       <>
-        Guanggeng is a Fremont-based Senior Software Engineer with a passion for
-        building scalable web applications and leading technical migrations. His
-        expertise includes end-to-end rearchitecture of medical e-commerce
-        platforms, migrating from legacy Vue 2 stacks to Next.js/React.js, and
-        achieving significant performance improvements. With a strong background
-        in both frontend and mobile development, he has successfully improved
-        GTmetrix Performance Grade from D to A, reduced LCP by 3.1s to 1.2s, and
+        Guanggeng is a Fremont-based Senior Staff Software Engineer at Palo Alto
+        Networks, with a passion for building scalable web applications and
+        leading technical migrations. Previously at Vibrant Wellness, he led the
+        end-to-end rearchitecture of medical e-commerce platforms, migrating
+        from legacy Vue 2 stacks to Next.js/React.js. With a strong background
+        in both frontend and mobile development, he has improved GTmetrix
+        Performance Grade from D to A, reduced LCP from 3.1s to 1.2s, and
         boosted mobile conversion rates by 22%. His approach combines technical
         excellence with leadership skills, having led 3-person teams in agile
         environments while implementing robust testing strategies and
@@ -104,8 +104,22 @@ const about = {
     title: "Work Experience",
     experiences: [
       {
+        company: "Palo Alto Networks",
+        timeframe: "Mar 2026 - Present",
+        role: "Senior Staff Software Engineer",
+        achievements: [
+          <>
+            Full-time, on-site in Santa Clara, California.
+          </>,
+        ],
+        logo: {
+          src: "/images/companies/palo-alto-networks.png",
+          alt: "Palo Alto Networks Logo",
+        },
+      },
+      {
         company: "Vibrant Wellness",
-        timeframe: "Jul 2021 - Present",
+        timeframe: "Jul 2021 - Mar 2026",
         role: "Senior Software Engineer",
         achievements: [
           <>
@@ -332,6 +346,86 @@ const articles = {
   description:
     "A collection of technical articles, tutorials and insights about web development, architecture design and software engineering",
   data: [
+    {
+      id: 19,
+      title: "Leading a Frontend Team Through a Platform Migration",
+      description:
+        "What actually mattered as frontend tech lead on a Vue 2 to Next.js rebuild: architecture decisions, agile delivery, code quality, and keeping a small team aligned while the old app still had to ship.",
+      date: "September 12, 2026",
+      image: "https://picsum.photos/seed/frontend-tech-lead/720/480",
+      link: "/articles/19",
+      tags: ["Leadership", "Migration", "Engineering"],
+    },
+    {
+      id: 18,
+      title: "Accessible Storefronts: Meeting WCAG 2.1 in Practice",
+      description:
+        "Semantic HTML, ARIA, and keyboard navigation on a real e-commerce rebuild — what we implemented, how we tested it, and why accessibility also improved mobile conversion.",
+      date: "August 20, 2026",
+      image: "https://picsum.photos/seed/wcag-storefront/720/480",
+      link: "/articles/18",
+      tags: ["Accessibility", "WCAG", "Frontend"],
+    },
+    {
+      id: 17,
+      title: "Shipping a Cross-Platform App with React Native and Expo",
+      description:
+        "Lessons from building CFREE, a real estate exam prep app, with React Native, Expo, in-app purchases, push notifications, and Firebase Auth — and releasing it to the App Store and Google Play.",
+      date: "July 8, 2026",
+      image: "https://picsum.photos/seed/react-native-expo-app/720/480",
+      link: "/articles/17",
+      tags: ["React Native", "Expo", "Mobile"],
+    },
+    {
+      id: 16,
+      title: "Product Analytics for Frontend Engineers",
+      description:
+        "Using Google Analytics 4, Mixpanel, and Sentry together: what to track, how to avoid duplicate events, and how instrumentation drove conversion lift and fewer frontend errors.",
+      date: "May 22, 2026",
+      image: "https://picsum.photos/seed/frontend-analytics-sentry/720/480",
+      link: "/articles/16",
+      tags: ["Analytics", "Sentry", "Mixpanel"],
+    },
+    {
+      id: 15,
+      title: "SEO Architecture for Next.js E-commerce",
+      description:
+        "How we moved a storefront from a Lighthouse SEO score of 67 to 100: SSR, semantic HTML, metadata, crawlability, and the mistakes that keep product pages invisible.",
+      date: "March 18, 2026",
+      image: "https://picsum.photos/seed/nextjs-seo-ecommerce/720/480",
+      link: "/articles/15",
+      tags: ["SEO", "Next.js", "E-commerce"],
+    },
+    {
+      id: 14,
+      title: "TypeScript Patterns for Large React Codebases",
+      description:
+        "Practical TypeScript habits that keep a growing React app refactorable: domain types, API boundaries, discriminated unions, and how to stop any from spreading.",
+      date: "January 30, 2026",
+      image: "https://picsum.photos/seed/typescript-react-patterns/720/480",
+      link: "/articles/14",
+      tags: ["TypeScript", "React", "Architecture"],
+    },
+    {
+      id: 13,
+      title: "A Frontend Testing Strategy for High-Traffic Checkout",
+      description:
+        "How we used Jest, Vitest, and Playwright on a medical e-commerce platform: what to unit test, what to leave to E2E, and how we reached 85%+ coverage without slowing the team down.",
+      date: "November 14, 2025",
+      image: "https://picsum.photos/seed/playwright-checkout-testing/720/480",
+      link: "/articles/13",
+      tags: ["Testing", "Playwright", "Jest"],
+    },
+    {
+      id: 12,
+      title: "How We Cut LCP from 3.1s to 1.2s",
+      description:
+        "A field guide to Core Web Vitals on a real e-commerce rebuild. What actually moved Largest Contentful Paint, what looked useful but did not, and how we kept the gains after launch.",
+      date: "September 4, 2025",
+      image: "https://picsum.photos/seed/core-web-vitals-lcp/720/480",
+      link: "/articles/12",
+      tags: ["Performance", "Core Web Vitals", "Next.js"],
+    },
     {
       id: 0,
       title: "Building Scalable React Applications",

@@ -1,0 +1,119 @@
+---
+title: "Kolvex.app — Broker Portfolio and AI Trade Review"
+publishedAt: "2026-06-13"
+summary: "Built a portfolio workspace that connects Robinhood or Interactive Brokers, organizes stock and option positions, P&L, and wash-sale risk, then reviews selected trades with the user's preferred AI model."
+images:
+  - "/images/projects/kolvex/cover-01.jpg"
+  - "/images/projects/kolvex/cover-02.jpg"
+team:
+  - name: "Guanggeng Yang"
+    role: "Senior Software Engineer"
+    avatar: "/images/avatar.png"
+    linkedIn: "https://www.linkedin.com/in/guanggengyang/"
+link: "https://kolvex.app"
+---
+
+## Overview
+
+[Kolvex.app](https://kolvex.app) is a portfolio workspace that gives every trade its full context. Traders connect Robinhood or Interactive Brokers with read-only access, then review holdings, stock trades, option activity, realized and unrealized P&L, and wash-sale exposure in one place.
+
+Selected transactions can be carried into AI Markdown trade review, stop-loss and take-profit planning, and strategy backtesting using the user's preferred model. Connection credentials are encrypted, and broker access stays read-only so the product can organize an investment record without placing trades.
+
+---
+
+## Key Features
+
+- **Read-Only Broker Sync**:  
+  Connect Robinhood account sync or official IBKR Flex, then pull holdings, stock trades, and option activity into a single workspace.
+
+- **Portfolio and Risk Review**:  
+  Surface realized and unrealized P&L, sell timing, current wash-sale risk, and post-sale performance so users can see what happened after a close.
+
+- **AI Trade Review**:  
+  Send selected trades into Markdown analysis with user-provided keys for OpenAI, Anthropic, and other providers, instead of locking the product to a single model.
+
+- **Process Improvement Tools**:  
+  Pair quantitative risk plans with stop-loss / take-profit workflows, CSV export, history filters, and strategy backtesting.
+
+- **Encrypted Credentials**:  
+  Store broker connection secrets encrypted at rest, with tenant-scoped records and session handling through Supabase Auth.
+
+- **Market Context Layer**:  
+  Keep the same product surface connected to charts, news, and social signals so a trade review can sit next to the broader market picture.
+
+---
+
+## Technologies Used
+
+- **Frontend**: Next.js 14, React, TypeScript, Tailwind CSS, Radix UI, Recharts
+- **Backend API**: FastAPI, Python, SQLAlchemy, Alembic, APScheduler
+- **Database & Auth**: PostgreSQL via Supabase, Supabase Auth, Row-Level Security
+- **Broker Integrations**: Robinhood read-only sync, Interactive Brokers Flex
+- **AI**: User-configured OpenAI / Anthropic (and other) API keys for trade review
+- **Deployment**: Vercel (frontend) + Railway (API), PWA support
+
+---
+
+## Architecture Highlights
+
+### 1. From Broker Connection to Trade Review
+
+The product is organized around a four-step workflow:
+
+- **Connect a Broker** → Robinhood or IBKR Flex with encrypted credentials
+- **Sync Your Portfolio** → daily holdings, stock trades, and option activity
+- **Review Risk and Performance** → P&L, wash-sale risk, post-sale review
+- **Improve Your Process** → AI Markdown review, risk plans, and backtesting
+
+Broker payloads are normalized into a shared holdings and orders model so Robinhood and IBKR data can be merged, filtered, and exported without the UI knowing which source filled each row.
+
+---
+
+### 2. Hybrid Rendering & Performance
+
+- **App Router + Server Components** for marketing pages, SEO metadata, and first paint
+- **Client Components** for the authenticated portfolio workspace, filters, and live sync status
+- **Supabase SSR** for cookie-based sessions across Next.js server and client boundaries
+
+The public site stays fast on Vercel, while long-running broker sync and AI review jobs run on the FastAPI service.
+
+---
+
+### 3. Secure Broker Data Isolation
+
+Kolvex treats broker credentials as sensitive user data:
+
+- Read-only broker connections; the product does not place orders
+- Encrypted connection credentials stored per user
+- Supabase Auth sessions with RLS on portfolio, order, and settings tables
+- User-owned AI keys so model access is not shared across accounts
+
+---
+
+## Challenges and Learnings
+
+- **Broker Authentication**:  
+  Robinhood device-approval flows and IBKR Flex token handling required session restore, refresh, and clear reconnect paths when a cached session expired.
+
+- **Multi-Broker Normalization**:  
+  Stock orders, option orders, and account-level holdings arrive in different shapes. A shared order model plus merge-on-read made wash-sale and P&L views consistent across brokers.
+
+- **Wash-Sale Visibility**:  
+  Users needed current wash-sale exposure, not just a historical tax export. Risk symbols are derived from synced fills and shown next to the transaction list.
+
+- **Bring-Your-Own AI**:  
+  Trade review works with the user's preferred model. Provider keys stay on the account, and the review output is Markdown so it can sit beside the original fills.
+
+---
+
+## Outcome
+
+Kolvex.app is live at [https://kolvex.app](https://kolvex.app) as a production portfolio workspace:
+
+- Read-only Robinhood and IBKR Flex sync
+- Unified holdings, stock, and option transaction history
+- Realized / unrealized P&L with wash-sale risk listing
+- AI Markdown trade review using the trader's own model keys
+- Encrypted credentials and tenant-scoped portfolio data
+
+The project shows how a Next.js + FastAPI + Supabase stack can turn scattered broker data into an investment record that is easier to review and improve.
