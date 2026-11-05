@@ -34,9 +34,10 @@ interface MailchimpProps {
     title: React.ReactNode;
     description: React.ReactNode;
   };
+  locale?: "en" | "zh";
 }
 
-export const Mailchimp = ({ newsletter }: MailchimpProps) => {
+export const Mailchimp = ({ newsletter, locale = "en" }: MailchimpProps) => {
   const handleEmailClick = (e: React.MouseEvent) => {
     e.preventDefault();
     window.open("mailto:yangguanggeng960123@gmail.com", "_blank");
@@ -137,7 +138,7 @@ export const Mailchimp = ({ newsletter }: MailchimpProps) => {
           prefixIcon="email"
           fillWidth
         >
-          Send Message
+          {locale === "zh" ? "发送邮件" : "Send Message"}
         </Button>
         <Button
           onClick={handleResumeClick}
@@ -145,7 +146,7 @@ export const Mailchimp = ({ newsletter }: MailchimpProps) => {
           size="m"
           prefixIcon="IoDownloadOutline"
         >
-          Download Resume
+          {locale === "zh" ? "下载简历" : "Download Resume"}
         </Button>
       </Flex>
     </Column>

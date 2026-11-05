@@ -1,0 +1,87 @@
+---
+title: "Kolvex.app — 券商投资组合与 AI 交易复盘"
+publishedAt: "2026-06-13"
+summary: "构建投资组合工作台，连接 Robinhood 或 Interactive Brokers，集中管理股票和期权持仓、盈亏与洗售风险，并使用用户偏好的 AI 模型复盘指定交易。"
+images:
+  - "/images/projects/kolvex/cover-01.jpg"
+  - "/images/projects/kolvex/cover-02.jpg"
+team:
+  - name: "Guanggeng Yang"
+    role: "高级软件工程师"
+    avatar: "/images/avatar.png"
+    linkedIn: "https://www.linkedin.com/in/guanggengyang/"
+link: "https://kolvex.app"
+---
+
+## 项目概述
+
+[Kolvex.app](https://kolvex.app) 是一个投资组合工作台，为每笔交易提供完整背景信息。用户可以通过只读权限连接 Robinhood 或 Interactive Brokers，在同一处查看持仓、股票交易、期权活动、已实现与未实现盈亏，以及洗售风险敞口。
+
+用户可以选取交易进行 AI Markdown 复盘、制定止损和止盈计划，并通过自己偏好的模型回测策略。券商连接凭据经过加密，账户权限保持只读，平台只整理投资记录，不会代替用户下单。
+
+## 核心功能
+
+- **只读券商同步**：连接 Robinhood 账户或通过官方 IBKR Flex 接口同步，将持仓、股票交易和期权活动汇总到一个工作台。
+- **投资组合与风险复盘**：展示已实现和未实现盈亏、卖出时机、当前洗售风险及卖出后的表现，帮助用户了解平仓之后发生了什么。
+- **AI 交易复盘**：使用用户提供的 OpenAI、Anthropic 等服务商密钥，将选定交易整理为 Markdown 分析，不将产品绑定到单一模型。
+- **交易流程改进工具**：结合量化风险计划、止损/止盈流程、CSV 导出、历史筛选和策略回测。
+- **加密凭据**：静态加密保存券商连接密钥，通过用户隔离的记录和 Supabase Auth 管理会话。
+- **市场背景信息**：在同一产品界面中整合图表、新闻与社交信号，让交易复盘能够结合更广泛的市场信息。
+
+## 技术栈
+
+- **前端**：Next.js 14、React、TypeScript、Tailwind CSS、Radix UI、Recharts
+- **后端 API**：FastAPI、Python、SQLAlchemy、Alembic、APScheduler
+- **数据库与认证**：基于 Supabase 的 PostgreSQL、Supabase Auth、行级安全策略（RLS）
+- **券商集成**：Robinhood 只读同步、Interactive Brokers Flex
+- **AI**：用户配置的 OpenAI、Anthropic 等服务商密钥，用于交易复盘
+- **部署**：Vercel（前端）与 Railway（API），支持 PWA
+
+## 架构亮点
+
+### 从券商连接到交易复盘
+
+产品围绕四步工作流组织：
+
+1. **连接券商**：使用加密凭据连接 Robinhood 或 IBKR Flex。
+2. **同步投资组合**：同步每日持仓、股票交易和期权活动。
+3. **复盘风险与表现**：查看盈亏、洗售风险和卖出后的表现。
+4. **改进交易流程**：使用 AI Markdown 复盘、风险计划和策略回测。
+
+券商数据会先标准化为共享的持仓和订单模型。因此，Robinhood 与 IBKR 数据可以合并、筛选和导出，而界面不必关心每一行记录来自哪个数据源。
+
+### 混合渲染与性能
+
+- 使用 App Router 和服务端组件实现营销页面、SEO 元数据与首屏渲染。
+- 使用客户端组件构建需要身份验证的投资组合工作台、筛选器和实时同步状态。
+- 使用 Supabase SSR 管理 Next.js 服务端与客户端边界之间的 Cookie 会话。
+
+Vercel 上的公开站点保持轻量快速；耗时较长的券商同步和 AI 复盘任务由 FastAPI 服务处理。
+
+### 券商数据隔离
+
+Kolvex 将券商凭据视为敏感用户数据：
+
+- 连接权限为只读，产品不会代替用户下单。
+- 券商连接凭据按用户隔离并加密保存。
+- Supabase Auth 会话结合 RLS，保护投资组合、订单和设置数据。
+- 用户使用自己的 AI 密钥，各账户之间不共享模型访问权限。
+
+## 挑战与经验
+
+- **券商认证**：Robinhood 设备审批流程和 IBKR Flex 令牌管理需要支持会话恢复、刷新，并在缓存会话过期时提供清晰的重新连接流程。
+- **多券商数据标准化**：股票订单、期权订单和账户持仓的数据结构各不相同。使用共享订单模型并在读取时合并，确保不同券商的数据在洗售和盈亏视图中保持一致。
+- **洗售风险可见性**：用户需要了解当前风险，而不只是查看历史税务导出。系统根据同步的成交记录计算相关标的风险，并在交易列表旁展示。
+- **自带 AI 密钥**：用户可以使用自己偏好的模型进行复盘。服务商密钥保留在用户账户中，复盘结果以 Markdown 呈现，便于与原始成交记录对照。
+
+## 项目成果
+
+Kolvex.app 已上线，提供生产级投资组合工作台，包含：
+
+- Robinhood 与 IBKR Flex 只读同步
+- 统一的持仓、股票和期权交易历史
+- 已实现/未实现盈亏及洗售风险列表
+- 使用交易者自有模型密钥生成 AI Markdown 交易复盘
+- 加密凭据与按租户隔离的投资组合数据
+
+该项目展示了 Next.js、FastAPI 与 Supabase 技术栈如何将分散的券商数据整理成更便于复盘和改进的投资记录。

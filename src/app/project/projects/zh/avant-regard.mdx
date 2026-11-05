@@ -1,0 +1,68 @@
+---
+title: "Avant Regard — 时装社群、档案与二手交易平台"
+publishedAt: "2026-08-25"
+summary: "独立构建先锋时尚平台，涵盖社群、秀场档案、精品店发现与经过鉴定的二手交易；支持 iOS、Android 和 Next.js Web，并由同一套 FastAPI 后端提供服务。"
+images:
+  - "/images/projects/avant-regard/cover-01.jpg"
+  - "/images/projects/avant-regard/cover-02.jpg"
+team:
+  - name: "Guanggeng Yang"
+    role: "全栈工程师"
+    avatar: "/images/avatar.png"
+    linkedIn: "https://www.linkedin.com/in/guanggengyang/"
+link: "https://avantregard.com"
+---
+
+## 项目概述
+
+Avant Regard 是一个独立打造的先锋时尚产品，集穿搭分享与讨论社群、设计师和秀场档案、全球档案精品店地图，以及经鉴定的 C2C 档案单品交易市场于一体。产品同时提供 iOS、Android 应用和完整的 Web 体验，并共用同一套 FastAPI 后端。
+
+平台档案收录了 200 多位设计师和 9,000 多场秀场系列。收藏者和精品店可以发布商品、协商并完成订单；用户也可以维护个人收藏账本，将单品记录转化为数字护照，并一键重新上架。
+
+## 各功能模块
+
+- **发现与论坛**：分享穿搭、评价和日常动态，并支持关注、评论和私信。
+- **档案库**：记录设计师品牌与秀场资料，涵盖 200 多位设计师和 9,000 多场秀。
+- **精品店 / Atlas**：独立档案精品店目录与全球互动地图。
+- **交易市场**：收藏者和精品店可发布档案单品、发起报价并完成订单。
+- **个人档案**：私有收藏账本，支持数字护照和一键重新上架。
+- **商家工具**：精品店入驻、商品目录、分类和店铺控制台。
+- **Plus / 等级**：订阅服务可降低佣金并解锁档案分析，同时提供创作者称号与等级。
+
+## 核心功能
+
+- **三个客户端，共用一个 API**：使用 React Native（Expo）构建 iOS 和 Android 应用，使用 Next.js 14 构建 Web 产品，并以 FastAPI 和 PostgreSQL/Supabase 提供 API。Web 产品从落地页扩展为发现、档案、交易市场、Atlas、商家控制台和管理后台，均接入同一套 REST API。
+- **双区域发布**：分别面向中国和北美发布应用变体，支持中英双语；中国区接入支付宝和微信支付，海外接入 Stripe（包括 Connect 和 Identity）。iOS 版本通过 EAS 发布至 App Store。
+- **C2C 交易市场**：包含商品发布、报价、托管式订单、钱包与账本结算、KYC、打款、售后争议处理，以及附加到商品的付费专家鉴定报告。
+- **数字护照**：个人单品账本支持所有权匹配和一键重新上架；AI 可根据单张照片生成正面、侧面和背面视图。档案单品支持点赞与评论，但不会混入发现动态流。
+- **大型 Monorepo**：在单一代码库中维护 Expo、Next.js App Router 和 FastAPI/Postgres，包含约 100 个移动端页面、约 90 个 Web 路由，以及 100 多次数据库迁移，覆盖动态、聊天、商家运营和管理审核。
+
+## 技术栈
+
+- **移动端**：React Native、Expo、TypeScript、EAS
+- **Web**：Next.js 14、App Router、TypeScript
+- **API**：FastAPI、PostgreSQL、Supabase、Redis、Docker
+- **支付与身份验证**：Stripe、Stripe Connect、Stripe Identity、支付宝、微信支付
+- **产品能力**：中英文国际化、AI 图像生成
+
+## 架构亮点
+
+### 共享后端
+
+应用和 Web 不维护相互独立的数据模型，而是共同调用一套 REST API。因此，商品、数字护照、精品店地图标记和论坛主题在各个客户端都是同一条记录，产品得以从营销页面扩展为完整平台，而无需再建设第二套后端。
+
+### 双区域产品，而非两套产品
+
+中国和北美版本共享同一产品，仅切换语言、应用商店信息和支付渠道。中国区使用支付宝和微信支付，海外结账使用 Stripe，并通过 Connect 处理卖家打款、通过 Identity 完成 KYC。
+
+### 以账本为核心的交易市场
+
+一笔交易并非单一的结账请求。商品发布、报价、订单、钱包流水、打款、争议处理和可选鉴定报告，都是围绕同一件单品流转的独立状态。个人档案记录所有权，单品登记一次后即可重新发布到交易市场，无需重复录入。
+
+### 动态流隔离
+
+档案单品支持点赞和评论，但这些互动不会进入发现动态流。社群帖子与商品目录可以共用互动能力，同时各自保有独立的信息流。
+
+## 项目成果
+
+Avant Regard 已作为独立产品上线：iOS 和 Android 应用通过 EAS 发布，Web 产品可在 [avantregard.com](https://avantregard.com) 访问。Monorepo 覆盖社群、档案、精品店地图、商家和管理工具，以及从拍照建档、报价、托管、鉴定到打款的二手交易闭环。

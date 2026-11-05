@@ -19,6 +19,7 @@ interface ProjectCardProps {
   description: string;
   avatars: { src: string; key?: string }[];
   link: string;
+  locale?: "en" | "zh";
 }
 
 export const ProjectCard: React.FC<ProjectCardProps> = ({
@@ -29,6 +30,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
   description,
   avatars,
   link,
+  locale = "en",
 }) => {
   return (
     <Column fillWidth gap="m">
@@ -76,7 +78,9 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
                   style={{ margin: "0", width: "fit-content" }}
                   href={href}
                 >
-                  <Text variant="body-default-s">Read case study</Text>
+                  <Text variant="body-default-s">
+                    {locale === "zh" ? "查看项目详情" : "Read case study"}
+                  </Text>
                 </SmartLink>
               )}
               {link && (
@@ -85,7 +89,9 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
                   style={{ margin: "0", width: "fit-content" }}
                   href={link}
                 >
-                  <Text variant="body-default-s">View project</Text>
+                  <Text variant="body-default-s">
+                    {locale === "zh" ? "访问项目" : "View project"}
+                  </Text>
                 </SmartLink>
               )}
             </Flex>

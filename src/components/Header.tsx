@@ -13,6 +13,7 @@ import {
   gallery,
   articles,
 } from "@/app/resources/content";
+import Link from "next/link";
 
 type TimeDisplayProps = {
   timeZone: string;
@@ -52,6 +53,22 @@ export default TimeDisplay;
 
 export const Header = () => {
   const pathname = usePathname() ?? "";
+  const isChinese = pathname === "/zh" || pathname.startsWith("/zh/");
+  const pathPrefix = isChinese ? "/zh" : "";
+  const languagePath = isChinese
+    ? pathname.replace(/^\/zh(?=\/|$)/, "") || "/"
+    : `/zh${pathname === "/" ? "" : pathname}`;
+  const navigation = isChinese
+    ? {
+        about: "关于",
+        project: "项目",
+        articles: "文章",
+      }
+    : {
+        about: about.label,
+        project: project.label,
+        articles: articles.label,
+      };
 
   return (
     <>
@@ -90,8 +107,8 @@ export const Header = () => {
               {routes["/"] && (
                 <ToggleButton
                   prefixIcon="home"
-                  href="/"
-                  selected={pathname === "/"}
+                  href={`${pathPrefix}/`}
+                  selected={pathname === "/" || pathname === "/zh"}
                 />
               )}
               <Line vert maxHeight="24" />
@@ -100,15 +117,15 @@ export const Header = () => {
                   <ToggleButton
                     className="s-flex-hide"
                     prefixIcon="person"
-                    href="/about"
-                    label={about.label}
-                    selected={pathname === "/about"}
+                    href={`${pathPrefix}/about`}
+                    label={navigation.about}
+                    selected={pathname === "/about" || pathname === "/zh/about"}
                   />
                   <ToggleButton
                     className="s-flex-show"
                     prefixIcon="person"
-                    href="/about"
-                    selected={pathname === "/about"}
+                    href={`${pathPrefix}/about`}
+                    selected={pathname === "/about" || pathname === "/zh/about"}
                   />
                 </>
               )}
@@ -117,15 +134,21 @@ export const Header = () => {
                   <ToggleButton
                     className="s-flex-hide"
                     prefixIcon="grid"
-                    href="/project"
-                    label={project.label}
-                    selected={pathname.startsWith("/project")}
+                    href={`${pathPrefix}/project`}
+                    label={navigation.project}
+                    selected={
+                      pathname.startsWith("/project") ||
+                      pathname.startsWith("/zh/project")
+                    }
                   />
                   <ToggleButton
                     className="s-flex-show"
                     prefixIcon="grid"
-                    href="/project"
-                    selected={pathname.startsWith("/project")}
+                    href={`${pathPrefix}/project`}
+                    selected={
+                      pathname.startsWith("/project") ||
+                      pathname.startsWith("/zh/project")
+                    }
                   />
                 </>
               )}
@@ -168,18 +191,33 @@ export const Header = () => {
                   <ToggleButton
                     className="s-flex-hide"
                     prefixIcon="document"
-                    href="/articles"
-                    label={articles.label}
-                    selected={pathname.startsWith("/articles")}
+                    href={`${pathPrefix}/articles`}
+                    label={navigation.articles}
+                    selected={
+                      pathname.startsWith("/articles") ||
+                      pathname.startsWith("/zh/articles")
+                    }
                   />
                   <ToggleButton
                     className="s-flex-show"
                     prefixIcon="document"
-                    href="/articles"
-                    selected={pathname.startsWith("/articles")}
+                    href={`${pathPrefix}/articles`}
+                    selected={
+                      pathname.startsWith("/articles") ||
+                      pathname.startsWith("/zh/articles")
+                    }
                   />
                 </>
               )}
+              <Line vert maxHeight="24" />
+              <Link
+                href={languagePath}
+                hrefLang={isChinese ? "en" : "zh-CN"}
+                className="px-2 text-sm text-neutral-600 transition-colors hover:text-neutral-900 dark:text-neutral-300 dark:hover:text-white"
+                aria-label={isChinese ? "Switch to English" : "切换到中文版"}
+              >
+                {isChinese ? "EN" : "中文"}
+              </Link>
             </Flex>
           </Flex>
         </Flex>

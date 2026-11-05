@@ -12,6 +12,13 @@ export async function generateMetadata() {
   return {
     title,
     description,
+    alternates: {
+      canonical: "/project",
+      languages: {
+        en: "/project",
+        "zh-CN": "/zh/project",
+      },
+    },
     openGraph: {
       title,
       description,

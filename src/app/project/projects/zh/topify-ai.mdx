@@ -1,0 +1,80 @@
+---
+title: "Topify.ai — AI 可见度分析 SaaS 平台"
+publishedAt: "2025-10-15"
+summary: "为营销和增长团队构建多租户 SaaS 平台，追踪品牌及竞争对手在 ChatGPT、Claude、Perplexity 等大语言模型中的可见度。"
+images:
+  - "/images/projects/project-01/cover-01.jpg"
+  - "/images/projects/project-01/cover-02.jpg"
+team:
+  - name: "Guanggeng Yang"
+    role: "高级软件工程师"
+    avatar: "/images/avatar.png"
+    linkedIn: "https://www.linkedin.com/in/guanggengyang/"
+link: "https://topify.ai"
+---
+
+## 项目概述
+
+Topify.ai 是一个面向营销与增长团队的多租户 SaaS 平台，用于追踪品牌及竞争对手在 ChatGPT、Claude、Perplexity 等主流大语言模型（LLM）中的曝光情况。平台分析品牌在 AI 生成回答中的呈现方式，为 AI 搜索时代的数据驱动营销提供可操作的信息。
+
+## 核心功能
+
+- **多租户架构**：构建可扩展的 SaaS 平台，为多个组织提供数据隔离和可定制的分析仪表板。
+- **LLM 可见度追踪**：实时追踪 ChatGPT、Claude 和 Perplexity 中的品牌提及情况，并提供全面的可见度指标。
+- **混合渲染策略**：使用 Next.js 14 构建高性能仪表板，结合 React 服务端组件（RSC）与交互式客户端组件。
+- **现代 UI 组件**：使用 shadcn/ui 和 Radix UI 基础组件，构建无障碍、响应式且具备丰富交互的界面。
+- **多身份提供方联邦认证**：集成 NextAuth、AWS Cognito 和 Credentials 提供方，通过 JWT 会话回调管理访问令牌、ID 令牌和刷新令牌。
+- **订阅管理**：完整接入 Stripe Checkout 和 Webhook，管理订阅生命周期、支付处理与账单自动化。
+
+## 技术栈
+
+- **前端**：Next.js 14、React Server Components、TypeScript、shadcn/ui、Radix UI、Tailwind CSS
+- **认证**：NextAuth.js、AWS Cognito、JWT
+- **支付**：Stripe Checkout、Stripe Webhooks
+- **数据库与状态管理**：PostgreSQL、Prisma ORM
+- **部署**：Vercel、AWS
+
+## 架构亮点
+
+### 混合渲染策略
+
+应用利用 Next.js 14 的混合渲染能力优化性能：
+
+- **服务端组件**：处理静态内容、数据获取和对 SEO 至关重要的页面。
+- **客户端组件**：实现交互式仪表板、实时更新和用户操作。
+- **流式 SSR**：改善首字节时间（TTFB），逐步呈现页面内容。
+
+### 多认证身份联邦
+
+认证系统支持多个身份提供方：
+
+- 通过 AWS Cognito 接入企业单点登录。
+- 通过 Credentials 提供方支持邮箱和密码认证。
+- 使用 JWT 会话回调注入访问令牌、ID 令牌和刷新令牌。
+- 通过基于角色的访问控制（RBAC）实现多租户隔离。
+
+### Stripe 集成
+
+订阅流程包含：
+
+- 使用 Stripe Checkout 安全处理付款。
+- 通过 Webhook 实时处理订阅事件。
+- 自动化账单周期和发票管理。
+- 通过功能门控支持按用量计费的套餐。
+
+## 挑战与经验
+
+主要挑战之一是在保障数据隔离和性能的同时实现真正的多租户架构。这需要谨慎设计数据库结构、确保查询始终限定租户范围，并落实行级安全策略。此外，协调 NextAuth、AWS Cognito 和 JWT 令牌管理之间复杂的认证流程，也需要深入理解 OAuth 2.0 和 OIDC。
+
+Stripe Webhook 集成则需要解决幂等性和订阅状态变更期间的竞态问题。完善的错误处理与重试机制是保障可靠性的关键。
+
+## 项目成果
+
+Topify.ai 已作为生产级 SaaS 平台上线，帮助营销团队了解品牌在 AI 生成内容中的呈现情况。平台指标包括：
+
+- **快速加载**：平均 LCP 低于 1.2 秒。
+- **高可用性**：99.9% 正常运行时间。
+- **可扩展架构**：支持数百名并发用户。
+- **安全支付**：上线以来未发生支付处理错误。
+
+该项目体现了构建现代可扩展 SaaS 应用的经验，涵盖复杂认证、支付处理和多租户架构。

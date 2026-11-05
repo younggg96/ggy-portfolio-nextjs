@@ -4,10 +4,15 @@ import { ProjectCard } from "@/components";
 
 interface ProjectsProps {
   range?: [number, number?];
+  locale?: "en" | "zh";
 }
 
-export function Projects({ range }: ProjectsProps) {
-  let allProjects = getPosts(["src", "app", "project", "projects"]);
+export function Projects({ range, locale = "en" }: ProjectsProps) {
+  const projectPath =
+    locale === "zh"
+      ? ["src", "app", "project", "projects", "zh"]
+      : ["src", "app", "project", "projects"];
+  const allProjects = getPosts(projectPath);
 
   const sortedProjects = allProjects.sort((a, b) => {
     return (
@@ -26,7 +31,7 @@ export function Projects({ range }: ProjectsProps) {
         <ProjectCard
           priority={index < 2}
           key={post.slug}
-          href={`project/${post.slug}`}
+          href={`/${locale === "zh" ? "zh/" : ""}project/${post.slug}`}
           images={post.metadata.images}
           title={post.metadata.title}
           description={post.metadata.summary}
@@ -38,6 +43,7 @@ export function Projects({ range }: ProjectsProps) {
             })) || []
           }
           link={post.metadata.link || ""}
+          locale={locale}
         />
       ))}
     </Column>

@@ -16,7 +16,7 @@ import { Background, Column, Flex, ToastProvider } from "@/once-ui/components";
 
 export async function generateMetadata() {
   return {
-    metadataBase: new URL(`https://${baseURL}`),
+    metadataBase: new URL(baseURL),
     title: home.title,
     description: home.description,
     openGraph: {

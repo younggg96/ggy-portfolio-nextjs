@@ -19,6 +19,14 @@ This is my personal portfolio website built with Next.js, Tailwind CSS, and Once
 - 🔍 SEO optimized
 - 📊 Google Analytics integration
 
+## **Localization**
+
+- English pages remain available at the root routes.
+- The Simplified Chinese version is available under `/zh`, including the home page, about page, project listings and case studies, and localized article listings.
+- Shared Chinese UI and article metadata live in `src/app/resources/content.zh.ts`; translated project case studies live in `src/app/project/projects/zh`.
+- Chinese article detail pages currently show the English source with a notice while translations are prepared.
+- The language switch in the header keeps the current page when a matching translation exists.
+
 ## **Project Structure**
 
 ```
