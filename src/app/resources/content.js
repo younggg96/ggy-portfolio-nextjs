@@ -25,11 +25,15 @@ const newsletter = {
   ),
 };
 
+const github = {
+  username: "younggg96",
+};
+
 const social = [
   {
     name: "GitHub",
     icon: "github",
-    link: "https://github.com/younggg96",
+    link: `https://github.com/${github.username}`,
   },
   {
     name: "LinkedIn",
@@ -551,6 +555,7 @@ const articles = {
 
 export {
   person,
+  github,
   social,
   newsletter,
   home,

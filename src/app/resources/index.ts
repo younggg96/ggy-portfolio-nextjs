@@ -9,6 +9,7 @@ export {
 } from "@/app/resources/config";
 export {
   person,
+  github,
   social,
   newsletter,
   home,

@@ -12,9 +12,10 @@ import {
 } from "@/once-ui/components";
 // import { Projects } from "@/components/project/Projects";
 
-import { baseURL, routes } from "@/app/resources";
+import { baseURL, github } from "@/app/resources";
 import { home, about, person, newsletter } from "@/app/resources/content";
 import { Mailchimp } from "@/components";
+import { GitHubCalendar } from "@/components/GitHubCalendar";
 // import { Posts } from "@/components/blog/Posts";
 
 export async function generateMetadata() {
@@ -138,6 +139,7 @@ export default function Home() {
           <Mailchimp newsletter={newsletter} />
         </RevealFx>
       )}
+      <GitHubCalendar username={github.username} />
     </Column>
   );
 }
