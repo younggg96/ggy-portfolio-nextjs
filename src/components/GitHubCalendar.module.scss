@@ -36,26 +36,8 @@
   }
 }
 
-.years {
-  display: flex;
-  flex-direction: column;
-  gap: var(--static-space-20);
-}
-
-.yearHeader {
-  display: flex;
-  align-items: baseline;
-  gap: var(--static-space-8);
-  margin-bottom: var(--static-space-8);
-}
-
-.yearTitle {
-  margin: 0;
-  font-size: var(--font-size-m);
-  font-weight: 600;
-}
-
 .yearTotal {
+  margin: 0 0 var(--static-space-12);
   color: var(--neutral-on-background-weak);
   font-size: var(--font-size-xs);
 }
