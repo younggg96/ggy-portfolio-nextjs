@@ -110,10 +110,43 @@ const about = {
       {
         company: "Palo Alto Networks",
         timeframe: "Mar 2026 - Present",
-        role: "Senior Staff Software Engineer",
+        role: "Senior Staff Software Engineer (Frontend/UI)",
         achievements: [
+          <>Based in San Jose, California.</>,
           <>
-            Full-time, on-site in Santa Clara, California.
+            Develop enterprise-scale React and TypeScript applications for
+            Strata Cloud Manager (SCM), a centralized platform for configuring
+            Next-Generation Firewalls (NGFW) and Prisma Access security
+            services.
+          </>,
+          <>
+            Build Configuration Scope interfaces with hierarchical folder
+            navigation and context-aware interactions, enabling administrators
+            to switch between global, folder, and device-level configurations.
+          </>,
+          <>
+            Develop Snippet Management interfaces for browsing and organizing
+            reusable configuration snippets shared across folders, devices,
+            and deployments.
+          </>,
+          <>
+            Contribute reusable React components and frontend architecture for
+            configuration workflows, partnering with backend engineers and UX
+            designers to deliver consistent security management experiences.
+          </>,
+          <>
+            Build Security Policy Management interfaces with React Hook Form,
+            handling complex form state, validation, and dynamic rule
+            configuration.
+          </>,
+          <>
+            Integrate REST APIs with TanStack Query for server-state
+            management, fetching, caching, mutations, and invalidation across
+            configuration scopes and CRUD workflows.
+          </>,
+          <>
+            Optimize rendering performance and state management for
+            configuration-heavy enterprise interfaces.
           </>,
         ],
         logo: {

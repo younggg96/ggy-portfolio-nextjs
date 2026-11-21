@@ -46,7 +46,7 @@ export const Mailchimp = ({ newsletter, locale = "en" }: MailchimpProps) => {
   const handleResumeClick = (e: React.MouseEvent) => {
     e.preventDefault();
     window.open(
-      "https://drive.google.com/file/d/1OlcfFIZe8RgxRk9zQIPBah1ATPXefapg/view?usp=sharing",
+      "https://drive.google.com/file/d/1r0cYwGZ1Er7OH0B9lHFj7HGezHYuzMYy/view?usp=sharing",
       "_blank"
     );
   };

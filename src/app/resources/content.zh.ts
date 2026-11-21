@@ -28,7 +28,16 @@ export const newsletterZh = {
 };
 
 const experienceAchievements: Record<string, string[]> = {
-  "Palo Alto Networks": ["全职现场办公，工作地点为美国加利福尼亚州圣克拉拉。"],
+  "Palo Alto Networks": [
+    "工作地点为美国加利福尼亚州圣何塞。",
+    "为 Strata Cloud Manager（SCM）开发企业级 React 和 TypeScript 应用，用于集中配置下一代防火墙（NGFW）和 Prisma Access 安全服务。",
+    "构建 Configuration Scope 界面，支持分层文件夹导航和上下文交互，让管理员在全局、文件夹及设备级配置之间切换。",
+    "开发 Snippet Management 界面，用于浏览和整理可在文件夹、设备及部署间复用的配置片段。",
+    "参与配置管理工作流的前端架构与可复用 React 组件建设，与后端工程师和 UX 设计师协作，保持安全管理功能的交互一致性。",
+    "使用 React Hook Form 构建 Security Policy Management 界面，处理复杂表单状态、字段校验及动态规则配置。",
+    "使用 TanStack Query 集成 REST API，管理服务端状态、数据获取、缓存、变更及失效更新，保持不同配置范围和 CRUD 操作间的数据一致性。",
+    "优化配置密集型企业界面的前端渲染性能与状态管理。",
+  ],
   "Vibrant Wellness": [
     "主导医疗电商平台的端到端架构重建，从 Vue 2 迁移至 Next.js/React.js，解决构建性能、SEO、界面可扩展性和原子化设计等关键问题。",
     "通过 Next.js SSR/SSG 提升性能：GTmetrix 性能等级从 D 提升至 A，LCP 从 3.1 秒降至 1.2 秒，完整加载时间从 8.4 秒降至 1.3 秒，页面体积减少 85%，HTTP 请求减少 60%。",
@@ -68,7 +77,7 @@ export const aboutZh = {
     experiences: about.work.experiences.map((experience) => ({
       ...experience,
       role: experience.company === "Palo Alto Networks"
-        ? "高级首席软件工程师"
+        ? "高级首席软件工程师（前端/UI）"
         : experience.company === "Vibrant Wellness"
           ? "高级软件工程师"
           : "软件工程师",
